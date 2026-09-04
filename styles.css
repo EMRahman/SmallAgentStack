@@ -509,7 +509,9 @@ footer .brand-mark > span { background: var(--acid); }
   h2 { font-size: clamp(40px, 12vw, 58px); }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .button { width: 100%; }
-  .hero-visual { height: 450px; transform: scale(.78); margin: -10px auto -30px; }
+  .hero-visual { height: 450px; transform: scale(.78); transform-origin: center; margin: -10px auto -30px; }
+  .js .hero-visual.reveal { transform: translateY(18px) scale(.78); }
+  .js .hero-visual.reveal.in-view { transform: translateY(0) scale(.78); }
   .orbit-outer { width: 400px; height: 400px; }
   .orbit-inner { width: 255px; height: 255px; }
   .satellite-cron { right: -18px; }

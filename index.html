@@ -409,16 +409,17 @@
                 </div>
               </div>
               <div>
-                <span class="bridge-code-label">3 / Make cron drop the prompt safely</span>
+                <span class="bridge-code-label">3 / Make cron drop each prompt safely</span>
                 <div class="code-block multiline inbox-code">
-                  <code><span class="code-comment"># Write as .pending, then rename when complete</span><br />0 8 * * 1-5 /bin/echo 'Read TASKS.md and prepare today’s brief. Do not send or publish anything else.' &gt; /Users/you/PiWorkspace/telepi-inbox/morning-brief.pending &amp;&amp; /bin/mv /Users/you/PiWorkspace/telepi-inbox/morning-brief.pending /Users/you/PiWorkspace/telepi-inbox/morning-brief.txt</code>
-                  <button class="copy-button" type="button" data-copy="0 8 * * 1-5 /bin/echo 'Read TASKS.md and prepare today’s brief. Do not send or publish anything else.' &gt; /Users/you/PiWorkspace/telepi-inbox/morning-brief.pending &amp;&amp; /bin/mv /Users/you/PiWorkspace/telepi-inbox/morning-brief.pending /Users/you/PiWorkspace/telepi-inbox/morning-brief.txt" aria-label="Copy Telegram-aware cron example">Copy</button>
+                  <code><span class="code-comment"># mktemp gives every queued prompt a unique name; TelePi only sees it after the final .txt rename</span><br />0 8 * * 1-5 prompt=$(/usr/bin/mktemp /Users/you/PiWorkspace/telepi-inbox/morning-brief.XXXXXX) &amp;&amp; /bin/echo 'Read TASKS.md and prepare today’s brief. Do not send or publish anything else.' &gt; "$prompt" &amp;&amp; /bin/mv "$prompt" "$prompt.txt"</code>
+                  <button class="copy-button" type="button" data-copy="0 8 * * 1-5 prompt=$(/usr/bin/mktemp /Users/you/PiWorkspace/telepi-inbox/morning-brief.XXXXXX) &amp;&amp; /bin/echo 'Read TASKS.md and prepare today’s brief. Do not send or publish anything else.' &gt; &quot;$prompt&quot; &amp;&amp; /bin/mv &quot;$prompt&quot; &quot;$prompt.txt&quot;" aria-label="Copy Telegram-aware cron example">Copy</button>
                 </div>
               </div>
               <p class="bridge-note">
                 TelePi processes one <code>.txt</code> file at a time, sends it to the root Telegram chat for
                 the first allowlisted user, and removes the file after accepting it. If the chat is busy,
-                the file stays queued for the next check.
+                the file stays queued for the next check. Each run uses a unique filename, so a later job
+                cannot replace an earlier queued prompt.
               </p>
             </div>
             <p class="caveat"><span>Note</span> A session that is still being written by a cron run may appear incomplete in Livecraft until that run finishes.</p>
