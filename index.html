@@ -38,6 +38,7 @@
       <nav class="desktop-nav" aria-label="Main navigation">
         <a href="#philosophy">Philosophy</a>
         <a href="#evidence">Evidence</a>
+        <a href="#research">Research</a>
         <a href="#stack">The stack</a>
         <a href="#start">Set up</a>
         <a href="#migrate">Migrate</a>
@@ -51,6 +52,7 @@
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
         <a href="#philosophy">Philosophy</a>
         <a href="#evidence">Evidence</a>
+        <a href="#research">Research</a>
         <a href="#stack">The stack</a>
         <a href="#start">Set up</a>
         <a href="#migrate">Migrate</a>
@@ -106,20 +108,32 @@
       <section class="story section-pad">
         <div class="section-index">00 / Why</div>
         <div class="story-grid">
-          <h2>I wanted an agent,<br />not an appliance.</h2>
+          <h2>Using agents to build<br />our own agency.</h2>
           <div class="story-copy">
             <p>
-              My OpenClaw 2.0 upgrade did not work. After a fresh install, I found jobs I could not
-              deactivate and heartbeat activity creating costs I did not need. So I replaced the bundle
-              with four small, understandable pieces.
+              OpenClaw offered to take responsibility for the machinery of a personal assistant. In my
+              setup, I ended up responsible for that machinery anyway.
             </p>
             <p>
-              This is not a drop-in clone. It is a simpler pattern: Pi does the thinking, normal operating
-              system tools handle timing, and optional interfaces can be added or removed independently.
+              Pi makes fewer promises about removing the assembly work. What changed is that I no longer
+              have to do that work alone—and increasingly, I do not have to start from scratch.
+            </p>
+            <p>
+              Other people build useful components. Agents help me investigate, select, adapt and test
+              them. My own improvements can become starting points for someone else.
+            </p>
+            <p>
+              The distinction is not simply an agent acting for me versus an agent I control. It is an
+              agent helping me acquire the knowledge and tools to exercise more control myself.
+            </p>
+            <p>
+              Only afterwards did I learn that OpenClaw had been built on Pi.
+              <a href="#research-history">Discovering those shared roots</a> changed how I saw the choice:
+              not just which assistant to use, but which layers I actually needed.
             </p>
           </div>
           <blockquote>
-            “If a task should run, I schedule it. If it should not run, nothing calls the model.”
+            “Pi won for me when building my own agency became easier than maintaining someone else’s abstraction.”
           </blockquote>
         </div>
       </section>
@@ -129,63 +143,66 @@
           <div>
             <div class="section-index">01 / Philosophy</div>
             <p class="eyebrow">The design argument</p>
-            <h2>The agent should fit <em>your</em> life.</h2>
+            <h2>Who gets to decide<br /><em>how it changes?</em></h2>
           </div>
           <p class="section-summary">
-            People liked the idea of agents because they could describe an outcome instead of learning
-            another interface. The promise was not one bloated middleware layer controlling the workflow.
+            Both projects exist in the same era of cheaper coding. The distinction is not who can
+            generate code. It is where decisions live, how much each change must coordinate, and whether
+            users can make the system fit without changing it for everyone else.
           </p>
         </div>
 
         <div class="philosophy-body">
           <div class="philosophy-copy">
             <p>
-              A large agent platform can invert that promise. Work must live where the platform expects,
-              run through its orchestration, and accommodate machinery the user did not choose. Instead of
-              the agent adapting to the user’s tools and routines, the user begins working around the agent.
+              My reading of OpenClaw’s appeal is that it offered agency: your assistant, your devices,
+              your choice of connections. Its Gateway coordinates channels, sessions, policy and state.
+              That can make powerful capabilities coherent. It also gives the shared coordinator more
+              responsibilities to preserve when something changes.
             </p>
             <p>
-              The Unix instinct offers a useful alternative: give small pieces clear responsibilities,
-              connect them through understandable interfaces, and make each piece replaceable. Pi can do
-              the thinking; the operating system can keep time; a browser or messenger can remain optional.
-              Simplicity is the ultimate sophistication when it makes the system easier to inspect, change,
-              and trust—not when it merely hides complexity.
+              The bottleneck is not just producing code. It is reconciling different workflows, keeping
+              interfaces compatible, enforcing permissions and recovering safely. Cheap implementation
+              does not make those decisions cheap. A feature can be easy to generate and expensive to
+              fit into a shared system.
             </p>
             <p>
-              Better still, an agent can help people discover their own workflow: notice repeated work,
-              name the pattern, propose a small automation, and revise it as their needs become clearer.
-              The workflow belongs to the user. The agent helps reveal it.
+              Pi’s smaller scope lets my setup leave more decisions at the edges: the operating system
+              keeps time; a browser or messenger stays optional; a narrow integration can serve one
+              routine. With clear interfaces, experiments need not become changes to everyone’s core.
+              The advantage I am betting on is <strong>less compulsory coordination per personal change</strong>.
             </p>
+            <a class="argument-jump" href="#steelman">Read the strongest case on both sides <span aria-hidden="true">↓</span></a>
           </div>
 
           <div class="principle-list">
             <article class="principle">
               <span>01</span>
               <div>
-                <h3>Keep the seams visible</h3>
+                <h3>Make responsibility come with control</h3>
                 <p>
-                  When an invisible heartbeat consumes tokens, the abstraction has leaked. The user now
-                  has to understand hidden orchestration simply to control cost.
+                  If I must operate the system, I need to see what runs, limit its authority and stop it.
+                  Integration earns trust by absorbing that work—not merely hiding it until something breaks.
                 </p>
               </div>
             </article>
             <article class="principle">
               <span>02</span>
               <div>
-                <h3>Limit the upgrade blast radius</h3>
+                <h3>Keep personal choices local</h3>
                 <p>
-                  Bundling more responsibilities means one upgrade can disturb more of the workflow.
-                  Independent pieces can change without forcing every other piece to change with them.
+                  A calendar adaptation should not require a universal calendar product. Reuse common
+                  mechanisms, but keep individual workflow choices out of the shared core where possible.
                 </p>
               </div>
             </article>
             <article class="principle">
               <span>03</span>
               <div>
-                <h3>Let the user compose</h3>
+                <h3>Let useful experiments accumulate</h3>
                 <p>
-                  Add scheduling, a browser, or messaging because it serves a real routine—not because the
-                  platform assumes every user needs the same control plane.
+                  Agents can help map a problem, research options, inspect code, build connections and
+                  test the result. Share the useful pieces with documentation and tests—not just more code.
                 </p>
               </div>
             </article>
@@ -195,9 +212,141 @@
         <aside class="experience-note">
           <span>One user’s evidence</span>
           <p>
-            In my own setup, OpenClaw upgrades repeatedly broke parts of the workflow, while Pi agent
-            updates have been remarkably reliable. That is experience, not a universal benchmark—but it
-            is exactly what a smaller upgrade surface should make more likely.
+            In my setup, OpenClaw upgrades broke parts of the workflow; after a fresh install I struggled
+            to deactivate jobs and incurred heartbeat costs I did not need. Pi updates have been remarkably
+            reliable for me. That explains my preference; it is not a controlled benchmark or proof that
+            architecture alone caused the difference.
+          </p>
+        </aside>
+
+        <p class="architecture-note">
+          <strong>Compare real designs, not caricatures.</strong> OpenClaw is also open source, self-hostable
+          and extensible. Its <a href="https://github.com/openclaw/openclaw/blob/main/VISION.md" target="_blank" rel="noreferrer">current vision favours a lean core and community plugins ↗</a>.
+          The distinction is the scope of its <a href="https://docs.openclaw.ai/start/why-openclaw" target="_blank" rel="noreferrer">shared Gateway’s authority ↗</a>,
+          not “closed OpenClaw versus open Pi.” Centralising decisions in software on your machine is not
+          the same as handing them to a company. Both projects can evolve.
+        </p>
+
+        <div class="argument-context">
+          <article>
+            <p class="eyebrow">Why this works for me now</p>
+            <h3>Established pieces.<br />A personal fit.</h3>
+            <p>
+              I have used Pi to build iCal, Apple Notes and Firecrawl integrations. For larger pieces I
+              rely on TelePi and Pi Livecraft. Trying to vibe-code equivalents reminded me that a
+              demonstration is not a dependable product: session handling, recovery, security and design
+              take sustained work.
+            </p>
+            <p>
+              My preferred interfaces were not available to me a few months ago. Their arrival changed
+              the calculation. Pi did not always meet my needs; its growing ecosystem now lets me reuse
+              substantial work and tailor the remaining connections. Like a tailored suit, the point is
+              the fit—not manufacturing every material myself.
+            </p>
+            <p>
+              I have also used Pi to review the security of TelePi and Pi Livecraft. That helps me ask
+              better questions, not eliminate risk. Custom extensions still have dependencies; AI reviews
+              need verification. Local execution does not prevent a cloud model receiving the context
+              sent to it, and a prompt is not an enforced permission boundary.
+            </p>
+          </article>
+          <article>
+            <p class="eyebrow">The 90s parallel—and its limits</p>
+            <h3>Broad compatibility.<br />Or carefully chosen coherence.</h3>
+            <p>
+              This recalls sprawling desktop suites whose upgrades became projects of their own, versus
+              the Unix tradition of narrow tools and the Linux ecosystem’s room for experimentation.
+              Neither Unix nor Linux was magically reliable. Their useful lesson is that shared foundations
+              need not impose one finished workflow.
+            </p>
+            <p>
+              OpenClaw attempts an Apple-like promise of simplicity across a Microsoft-like variety of
+              environments. Apple’s best products earn coherence by constraining combinations, refusing
+              features and engineering the chosen experience. Bundling alone does not achieve that—and
+              Apple products can fail too. Even excellent standard products need not fit everyone: I find
+              iPhones too big and would prefer a smaller one.
+            </p>
+            <p>
+              The parallel with open financial rails is the ability to build alternatives without asking
+              one operator to provide every service. It is an analogy about room to experiment and exit,
+              not a claim that openness removes intermediaries, security risks or the need for consumer protection.
+            </p>
+          </article>
+        </div>
+
+        <section class="steelman" id="steelman" aria-labelledby="steelman-heading">
+          <div class="argument-heading">
+            <p class="eyebrow">Challenge the thesis</p>
+            <h3 id="steelman-heading">The strongest case.<br />And the strongest objection.</h3>
+            <p>A preference becomes more useful when it explains what could make the other approach win.</p>
+          </div>
+          <div class="steelman-grid">
+            <details class="steelman-card">
+              <summary>
+                <span class="steelman-kicker">For the thesis</span>
+                <strong>Local decisions,<br />shared foundations.</strong>
+                <span class="steelman-toggle" aria-hidden="true"></span>
+              </summary>
+              <ol>
+                <li><strong>Control should match responsibility.</strong> When an integrated assistant still
+                  requires me to troubleshoot its machinery, its promise has failed in my setup. Pi makes
+                  assembly explicit and gives me more choice about which machinery exists.</li>
+                <li><strong>Personal experiments need not become universal features.</strong> A small extension
+                  or replaceable interface can meet one need without requiring a shared product to reconcile
+                  every user’s preferences. Stable contracts let useful experiments spread selectively.</li>
+                <li><strong>Changes can remain more local.</strong> A scheduler, messenger and agent need not
+                  ship in one release. Clear boundaries can reduce the reach of a change, even though APIs
+                  and shared state remain dependencies.</li>
+                <li><strong>Effort can leave a capability I chose.</strong> Tokens spent researching, comparing,
+                  adapting and testing an integration can produce reusable tools and understanding. Repairs
+                  can be valuable too; the point is whether effort moves the system towards my needs.</li>
+                <li><strong>The ecosystem can compound.</strong> TelePi and Pi Livecraft filled gaps that once
+                  limited this approach for me. Agents help users find, inspect and adapt such work; documented,
+                  tested improvements can become starting points for future users and agents.</li>
+              </ol>
+            </details>
+            <details class="steelman-card steelman-counter">
+              <summary>
+                <span class="steelman-kicker">Against the thesis</span>
+                <strong>Delegation is agency,<br />too.</strong>
+                <span class="steelman-toggle" aria-hidden="true"></span>
+              </summary>
+              <ol>
+                <li><strong>Freedom from maintenance matters.</strong> Most people want outcomes, not a new
+                  engineering responsibility. A dependable integrated assistant can provide consistent
+                  permissions, shared state and support while leaving the user free to do something else.</li>
+                <li><strong>Pi’s complexity partly lives elsewhere.</strong> TelePi, Livecraft and custom
+                  extensions have bugs, dependencies and maintainers. Pi API changes can affect them. Comparing
+                  OpenClaw’s whole platform with Pi’s core alone is not a fair reliability test.</li>
+                <li><strong>Ownership is not a security certificate.</strong> Generated code and third-party
+                  extensions execute with real permissions. An integrated policy layer can enforce boundaries
+                  more consistently than ad hoc tools. AI-assisted reviews help, but do not guarantee safety.</li>
+                <li><strong>Timing and fit can explain the win.</strong> This combination only recently became
+                  sufficient for my needs. I depend on other people’s product work, and early satisfaction does
+                  not establish lower lifetime maintenance costs or suitability for everyone.</li>
+                <li><strong>The same coding-cost advantage is available to both.</strong> It cannot by itself
+                  explain their different outcomes. The hypothesis is about scope, coordination and change
+                  boundaries. OpenClaw can improve those boundaries; an undisciplined Pi stack can recreate
+                  the same oversized coordinator. Architecture must earn its advantage in operation.</li>
+              </ol>
+            </details>
+          </div>
+        </section>
+
+        <aside class="agency-outlook">
+          <p class="eyebrow">Not engineers or products</p>
+          <h3>A simple experience should not require surrendering control.</h3>
+          <p>
+            Most people will still want a finished product. The Unix philosophy is a way to build software,
+            not an obligation to give everyone a terminal. A curated, local-first application or a paid
+            managed service could offer a polished interface over replaceable components. Choosing a
+            platform does not inherently mean giving up personal data or becoming the product; that depends
+            on its business model, permissions, retention and exit options.
+          </p>
+          <p>
+            For me, Pi’s promise is agency that helps build agency: assistance not only with the task, but
+            with researching, designing and testing the tools through which I act. The test is whether I
+            can inspect, limit, change and leave the system—not how much autonomy it advertises.
           </p>
         </aside>
 
@@ -209,11 +358,15 @@
             </div>
             <button class="copy-button prompt-copy" type="button" data-copy-target="philosophy-prompt">Copy prompt</button>
           </div>
-          <pre id="philosophy-prompt"><code>Evaluate this thesis: personal AI agents should adapt to a user’s existing tools and evolving workflow through small, composable components, rather than requiring the user to work inside one integrated middleware platform.
+          <pre id="philosophy-prompt"><code>Evaluate this thesis: when code becomes cheaper, the bottleneck moves towards deciding what to build, coordinating changes, enforcing boundaries and maintaining a coherent system. A small, extensible agent harness can let users and their agents research, design, build and test personal workflows without requiring every experiment to become a decision for a shared platform.
 
-Steelman both sides. First, make the strongest case for an integrated agent platform, including onboarding, shared state, security, coordination, and convenience. Then make the strongest case for a Unix-style modular stack, including inspectability, replaceability, failure isolation, user control, and agents helping users discover their own workflows.
+Steelman both sides. Make the strongest case for integrated orchestration: dependable delegation, shared state, consistent policy, credentials, recovery, onboarding and support. Then make the strongest case for a small common foundation with replaceable components: local decisions, experimentation, selective reuse, inspectability and exit.
 
-Examine where each approach leaks abstraction—for example, when users must understand heartbeats or background activity to control token costs—and compare their upgrade blast radius. Separate evidence from preference, name the failure modes of both approaches, and conclude with the conditions under which each design wins. Include the strongest hybrid design you can propose.</code></pre>
+Both OpenClaw and Pi are open source, extensible, and operate in the same era of cheaper coding. Read their current architecture and vision documents. Do not portray one as closed or claim that code generation uniquely benefits the other. Distinguish centralised runtime authority from vendor ownership, governance, data custody and business model.
+
+Consider this user's experience: OpenClaw required upgrade repair and unwanted background-cost control; Pi became sufficient only after tools such as TelePi and Pi Livecraft were available. The user has built iCal, Apple Notes and Firecrawl integrations and used agents to review third-party tools. Separate testimony, timing, product fit and architectural hypotheses. Include the costs and security risks of the whole modular stack; do not treat AI review as certification or prompts as enforced permissions.
+
+Ask what would falsify the preference: compare matched tasks, upgrade success, repair hours and tokens, unwanted calls, permission scope, recovery and exit costs over time. GitHub activity and stars are not failure rates. Test the Apple/Microsoft, Unix/Linux and open-financial-rails analogies without assuming that integration requires surveillance or openness guarantees safety. Conclude with when each design wins and a credible consumer-friendly hybrid.</code></pre>
           <div class="prompt-footer">
             <span>Paste this into your favourite AI. Ask it to disagree before you decide.</span>
           </div>
@@ -273,13 +426,32 @@ Examine where each approach leaks abstraction—for example, when users must und
         <p class="evidence-caption">
           Snapshot captured 5 September 2026 using GitHub’s Search and Releases APIs. Release counts
           exclude drafts and prereleases. Issue counts depend on each project’s labels and reporting
-          habits; titles miss failures described only in the body. OpenClaw also has roughly 3.8× Pi’s
-          GitHub stars. Normalised by stars, the highlighted figures are about 0.31 versus 0.25 reports per
-          thousand stars; as a share of bug-labelled reports, they are 4.1% versus 3.9%. Stars are not
-          active users, so these are directional maintenance signals—not measured failure rates.
+          habits; titles miss failures described only in the body. As a share of bug-labelled reports,
+          the highlighted figures are 4.1% versus 3.9%. Repository age, audience, scope and triage differ;
+          Pi’s optional tools have their own issue trackers. Stars are not active installations, and
+          these counts are not measured failure rates.
           <a href="https://github.com/openclaw/openclaw/releases" target="_blank" rel="noreferrer">OpenClaw releases ↗</a>
           <a href="https://github.com/earendil-works/pi/releases" target="_blank" rel="noreferrer">Pi releases ↗</a>
         </p>
+
+        <aside class="evidence-reference">
+          <div>
+            <p class="eyebrow">History, not a scorecard</p>
+            <h3>Compare attention.<br />Then compare like ages.</h3>
+          </div>
+          <div>
+            <p>
+              <a href="https://www.star-history.com/?repos=earendil-works%2Fpi%2Copenclaw%2Fopenclaw&amp;type=date&amp;legend=top-left" target="_blank" rel="noreferrer">Open the Pi / OpenClaw Star History comparison ↗</a>.
+              That live, third-party chart uses calendar dates and describes public attention—not reliability
+              or active use. It is not the source of the fixed counts above.
+            </p>
+            <p>
+              <a href="evidence/evidence.html">Explore the age-aligned chart preview →</a> for releases and issue
+              reports from each repository’s creation, with a second starting-point check, source data and
+              the limits of comparing a whole platform with a smaller core.
+            </p>
+          </div>
+        </aside>
 
         <div class="signal-grid">
           <article class="signal-card">
@@ -334,7 +506,7 @@ Examine where each approach leaks abstraction—for example, when users must und
           </div>
           <div class="parallel-list">
             <div>
-              <span><a href="https://openclaw.ai/blog/extended-stable-releases-and-maturity-scorecards" target="_blank" rel="noreferrer">Rolling release → LTS ↗</a></span>
+              <span><a href="https://openclaw.ai/blog/extended-stable-releases-and-maturity-scorecards" target="_blank" rel="noreferrer">Rolling → extended-stable ↗</a></span>
               <p>Fast channels maximise learning. Stable channels protect routines. Mixing those promises makes every update a wager.</p>
             </div>
             <div>
@@ -343,7 +515,7 @@ Examine where each approach leaks abstraction—for example, when users must und
             </div>
             <div>
               <span>Unix tools → composition</span>
-              <p>Independent parts shift some assembly to the user, but timing, chat, UI, and agent updates no longer share one blast radius.</p>
+              <p>Independent parts shift some assembly to the user and need not share one release. Integration APIs and shared state can still couple their failures.</p>
             </div>
           </div>
         </div>
@@ -355,17 +527,326 @@ Examine where each approach leaks abstraction—for example, when users must und
             creates more compatibility edges and asks more operational effort when they move.
           </p>
           <p>
-            Pi’s public record does not prove perfect reliability. It does support a simpler proposition:
-            a minimal harness can release quickly while leaving cron, messaging, browsers, and their state
-            outside its upgrade path. <a href="https://pi.dev/" target="_blank" rel="noreferrer">That is also Pi’s stated design philosophy ↗</a>
+            Pi’s public record does not prove superior reliability. Its smaller scope lets cron, messaging
+            and browsers remain separately maintained components, although they can still depend on Pi’s
+            APIs and session behaviour. The architectural preference needs testing across the whole setup.
+            <a href="https://pi.dev/" target="_blank" rel="noreferrer">Read Pi’s design philosophy ↗</a>
           </p>
         </div>
+      </section>
+
+      <section class="research section-pad" id="research" aria-labelledby="research-heading">
+        <div class="section-heading research-heading">
+          <div>
+            <div class="section-index">03 / Research</div>
+            <p class="eyebrow">Maintenance, trust and human agency</p>
+            <h2 id="research-heading">Why OpenClaw struggled.<br /><em>Why Pi works for me.</em></h2>
+          </div>
+          <p class="section-summary">
+            The research explains some of OpenClaw’s difficulties—and gives reasons it could earn my
+            trust again. My preference starts somewhere simpler: Pi has kept working, without an idle
+            AI heartbeat, and my own extensions fit the jobs I actually want done.
+          </p>
+        </div>
+
+        <article class="research-experience" aria-labelledby="research-experience-heading">
+          <p class="eyebrow">My experience, not a benchmark</p>
+          <h3 id="research-experience-heading">First, it keeps working.<br />Then, it asks less of my trust.</h3>
+          <ol class="research-priorities" role="list">
+            <li>
+              <h4>Updates have not become repair projects.</h4>
+              <p>
+                In my use, Pi updates have kept my workflows working. Not having to fix the assistant
+                is a substantial benefit on its own. I do not need a grand theory to value software
+                that continues doing its job.
+              </p>
+            </li>
+            <li>
+              <h4>No tokens spent on an idle heartbeat.</h4>
+              <p>
+                The base Pi setup has no periodic AI heartbeat. When no task is running and no request
+                or configured trigger arrives, there is no model work to pay for. I add scheduled
+                tasks when I want them, rather than paying for the assistant to keep checking in.
+              </p>
+            </li>
+            <li>
+              <h4>I want to know what starts a run.</h4>
+              <p>
+                A request I send, or an automation I deliberately enable, is easier to reason about
+                than an unexplained “magic” feature. Unexpected activity makes me nervous—especially
+                when the AI’s judgment can vary from run to run. I want useful work, not surprises.
+              </p>
+            </li>
+            <li>
+              <h4>My extensions do not need to be products for everyone.</h4>
+              <p>
+                My iCal, Apple Notes and Firecrawl integrations are built around my routines. I like
+                that they contain just what I need, rather than extra workflows to learn or disable.
+                I reuse larger pieces such as TelePi and Livecraft instead of rebuilding everything.
+              </p>
+            </li>
+          </ol>
+        </article>
+
+        <aside class="research-boundary" aria-labelledby="research-boundary-heading">
+          <p class="eyebrow">A security distinction that matters</p>
+          <h3 id="research-boundary-heading">Predictable triggers are not predictable judgment.</h3>
+          <p>
+            No heartbeat removes one reason for an unsolicited model run; it does not guarantee
+            obedience during a requested task. Pi can still make mistakes, call tools and consume more
+            tokens while working. By default, Pi and its extensions run with my account’s permissions,
+            not inside a sandbox. A narrow extension is not automatically a narrow permission grant.
+          </p>
+          <p>
+            Real limits need scoped credentials, operating-system permissions or a suitably configured
+            sandbox. A prompt is not an enforced permission boundary, and an AI review is not security
+            certification. Each added bridge, scheduler or extension needs its own checks for triggers,
+            permissions and stop controls. No idle model calls also does not mean no network activity:
+            Pi can perform update checks and telemetry.
+            <a href="https://github.com/earendil-works/pi/blob/main/packages/coding-agent/README.md" target="_blank" rel="noreferrer">Pi’s documented defaults and package warnings ↗</a>
+          </p>
+        </aside>
+
+        <article class="research-history" id="research-history" aria-labelledby="research-history-heading">
+          <p class="eyebrow">The history I discovered afterwards</p>
+          <h3 id="research-history-heading">I found my alternative.<br />Then I discovered the shared roots.</h3>
+          <div class="research-history-grid">
+            <div>
+              <h4>Pi was already underneath.</h4>
+              <p>
+                On <a href="https://lucumr.pocoo.org/2026/1/31/pi/" target="_blank" rel="noreferrer">31 January 2026, Armin Ronacher described Pi as the agent inside OpenClaw</a>.
+                Mario Zechner’s <a href="https://mariozechner.at/posts/2026-04-08-ive-sold-out/" target="_blank" rel="noreferrer">8 April announcement</a>
+                is explicit: “OpenClaw is powered by pi.” He describes Peter building OpenClaw on Pi,
+                and OpenClaw’s popularity bringing new attention to Pi itself. The relationship was
+                publicly documented; I simply had not known about it.
+              </p>
+              <p>
+                OpenClaw made an underlying agent useful through a broader personal-assistant
+                experience. My reading is that messaging and automation made its promise easier to
+                grasp than a coding harness alone. The visible product attracted attention before
+                many users knew its foundations. That integration is real product work, not just a
+                cosmetic wrapper; these sources do not establish who first added Telegram or cron.
+              </p>
+              <p class="research-version-note">
+                <strong>A history, not a permanent dependency map.</strong> The
+                <a href="https://github.com/openclaw/openclaw/blob/0cebe40cf7cb939da0c5722a990eb10522d27d5a/docs/concepts/agent.md" target="_blank" rel="noreferrer">main-branch runtime documentation checked on 5 September</a>
+                describes an OpenClaw-owned embedded runtime. The early Pi relationship should not be
+                assumed to describe every later release unchanged.
+              </p>
+            </div>
+            <div>
+              <h4>My discovery ran in the other direction.</h4>
+              <p>
+                I became frustrated with OpenClaw’s delivery, found Pi independently, and assembled
+                the messaging, schedules and narrow integrations I wanted. Only afterwards did I
+                discover that OpenClaw had been built on Pi. I had not simply found an unrelated
+                rival: I had found a foundation I could use differently.
+              </p>
+              <p>
+                This is the “smoke and mirrors” feeling I associate with opaque software—not an
+                accusation of deliberate concealment. A finished product can make its underlying
+                capabilities hard to recognise. Discovering the pieces changed my sense of what I,
+                as the user, was allowed and able to shape.
+              </p>
+              <p>
+                It reminds me of the educational ideal behind
+                <a href="https://www.raspberrypi.org/about/" target="_blank" rel="noreferrer">Raspberry Pi: helping people understand, create with and critically evaluate computing</a>,
+                rather than only consume a finished appliance. That is my analogy, not a quotation
+                from its founders; the two Pi projects are unrelated.
+              </p>
+            </div>
+          </div>
+          <blockquote>The layer that helps me start should not become the limit of what I can change.</blockquote>
+        </article>
+
+        <div class="research-findings">
+          <article id="research-openclaw">
+            <p class="eyebrow">What the project documented</p>
+            <h3>Why OpenClaw struggled.</h3>
+            <p>
+              In the <a href="https://openclaw.ai/blog/openclaw-rough-week" target="_blank" rel="noreferrer">5 May 2026 postmortem</a>,
+              Peter Steinberger called OpenClaw “too founder-driven”: too much release, review,
+              packaging and support work rested with him. Startup and update paths were also doing
+              dependency repair while bundled and external plugins were incompletely separated.
+            </p>
+            <p>
+              This was trouble during a move <em>towards</em> a smaller core—not simply proof that
+              bundling is bad. The account supports a diagnosis of overloaded stewardship and fragile
+              change boundaries. It does not isolate architecture as the cause of every failure.
+            </p>
+            <p>
+              The <a href="https://openclaw.ai/blog/openclaw-2-accidentally" target="_blank" rel="noreferrer">30 August account of OpenClaw 2.0</a>
+              likewise says growth outpaced the foundation and release process. It also says the team
+              delayed the unusually large release to test new installs and upgrades. Release size shows
+              the coordination challenge; it is not, by itself, evidence that the release was unreliable.
+            </p>
+          </article>
+          <article id="research-recovery">
+            <p class="eyebrow">Why the answer could change</p>
+            <h3>Why it could earn trust again.</h3>
+            <p>
+              The <a href="https://openclaw.ai/blog/introducing-openclaw-foundation/" target="_blank" rel="noreferrer">8 July foundation announcement</a>
+              describes paid staff, donors and corporate engineering support. The
+              <a href="https://openclaw.ai/blog/extended-stable-releases-and-maturity-scorecards" target="_blank" rel="noreferrer">30 July extended-stable announcement</a>
+              adds backported fixes and at least one month of support per line—a step towards LTS,
+              not yet a long-term-support promise. These are credible responses, not proof of recovery.
+            </p>
+            <p>
+              OpenClaw also permits personal plugins without a core merge. Its
+              <a href="https://github.com/openclaw/openclaw/blob/main/VISION.md" target="_blank" rel="noreferrer">vision favours contracts over a queue of feature merges</a>.
+              This is not permissionless Pi versus permission-controlled OpenClaw. The question is
+              how much machinery I must understand and maintain to get my particular jobs done.
+            </p>
+            <p>
+              Its <a href="https://docs.openclaw.ai/gateway/heartbeat" target="_blank" rel="noreferrer">heartbeat documentation</a>
+              allows recurring heartbeats to be disabled, while event-driven wakes remain a separate
+              consideration. I prefer a base setup without that machinery; I am not claiming every
+              OpenClaw installation must run periodic checks.
+            </p>
+          </article>
+        </div>
+
+        <article class="research-hypothesis" aria-labelledby="research-pi-heading">
+          <p class="eyebrow">A plausible explanation—not a proven cause</p>
+          <h3 id="research-pi-heading">Why a smaller setup may be working better for me.</h3>
+          <p>
+            Pi makes fewer built-in product commitments, the operating system supplies scheduling,
+            and I choose the interfaces and integrations I need. That can leave fewer unrelated
+            behaviours to understand when something changes. But a separate repository is not a
+            compatibility guarantee: TelePi, Livecraft and my extensions still depend on interfaces,
+            session behaviour and other maintainers. The whole stack—not Pi’s core alone—must earn
+            the reliability claim.
+          </p>
+          <p>
+            Less total maintenance, a smaller reach when something fails, and more choice about
+            which maintenance I accept are three different benefits. My experience establishes a
+            personal preference, not all three. <strong>A small core is a scope decision. A stable
+            interface is a maintenance commitment.</strong> Agents make adaptation easier, but they
+            can also help me accumulate more custom code than I can responsibly maintain.
+          </p>
+        </article>
+
+        <div class="research-notes">
+          <details class="research-detail" id="research-governance">
+            <summary>Who maintains it—and who gets a say?</summary>
+            <div class="research-detail-body">
+              <p>
+                Neither unrestricted contribution nor a profit motive guarantees reliability. The
+                useful question is who benefits from adding a feature, who maintains it afterwards,
+                and whether that owner has resources and authority to say “not in this layer.” Moving
+                a feature out of core can move work to another maintainer—or to me—without reducing it.
+              </p>
+              <p>
+                Pi’s <a href="https://github.com/earendil-works/pi/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">contribution gate</a>
+                auto-closes issues and pull requests from new contributors; maintainers review closed
+                issues daily and reopen worthwhile ones. That protects scarce review time, but does
+                not make Pi more democratic or remove my dependence on core fixes. Extensibility helps
+                when my need can be met outside the core; both projects offer that possibility.
+              </p>
+              <p>
+                The <a href="https://mariozechner.at/posts/2026-04-08-ive-sold-out/" target="_blank" rel="noreferrer">April announcement also placed Pi at Earendil</a>,
+                with an MIT-licensed core and plans for commercial additions under other licences.
+                Pi is not outside commercial incentives either. Evaluate its commitments, funding
+                and exit options, not an imagined opposition between companies and open source.
+              </p>
+              <p>
+                Concentrated power is not only a risk when people are overloaded. Even a well-funded
+                team can abandon an interface or change priorities. Good stewardship needs clear
+                commitments, a way to raise problems and a practical exit—not merely strict maintainers.
+                The right to fork source code matters, but is not an affordable remedy for everyone.
+              </p>
+            </div>
+          </details>
+          <details class="research-detail" id="research-precedents">
+            <summary>What Linux, SQLite and Bitcoin actually teach</summary>
+            <div class="research-detail-body">
+              <ul class="research-lessons">
+                <li>
+                  <strong>Linux: choose the boundary that stays dependable.</strong> Its
+                  <a href="https://docs.kernel.org/process/2.Process.html" target="_blank" rel="noreferrer">maintainer hierarchy</a>
+                  is selective, and its kernel is large and monolithic. The
+                  <a href="https://docs.kernel.org/process/stable-api-nonsense.html" target="_blank" rel="noreferrer">stable userspace interface</a>
+                  protects applications, while in-tree drivers can be repaired together when internal
+                  interfaces change. Sometimes integration makes maintenance cheaper.
+                </li>
+                <li>
+                  <strong>SQLite: pay for dependable shared work.</strong> It is
+                  <a href="https://sqlite.org/copyright.html" target="_blank" rel="noreferrer">open-source, not open-contribution</a>.
+                  Its <a href="https://sqlite.org/consortium.html" target="_blank" rel="noreferrer">consortium funds maintenance and support</a>,
+                  while developers retain technical direction. Disciplined scope and
+                  <a href="https://sqlite.org/testing.html" target="_blank" rel="noreferrer">extensive testing</a>
+                  matter more here than unrestricted merge access.
+                </li>
+                <li>
+                  <strong>Bitcoin: distinguish implementation authority from enforceable rules.</strong>
+                  <a href="https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md" target="_blank" rel="noreferrer">Core’s repository decisions</a>
+                  are not network consensus; <a href="https://github.com/bitcoin/bips" target="_blank" rel="noreferrer">publishing a proposal is not adoption</a>.
+                  A node can reject invalid blocks, not compel others to accept its preferred rules.
+                  For agents, the useful parallel is enforcing important limits independently of the
+                  model’s judgment—not assuming decentralisation makes a system safe.
+                </li>
+              </ul>
+              <p>
+                These are different lessons, not proof that Pi has inherited decades of dependability.
+                A maintainable foundation leaves room to build around it, but someone still has to
+                preserve the interfaces, fund the work and test the result.
+              </p>
+            </div>
+          </details>
+          <details class="research-detail" id="research-test">
+            <summary>How to test the preference instead of defending it forever</summary>
+            <div class="research-detail-body">
+              <p>
+                <strong>A proposed comparison, not a result already measured:</strong> use the same
+                morning-brief task in both setups. Change its instructions while keeping the schedule
+                and output destination fixed. Record which components need changing, what breaks, and
+                repair time and tokens. Then test an upgrade, disabling the schedule, restoring state
+                and replacing an interface. Check model-call logs rather than assuming silence means
+                nothing ran. Keep the model, permissions and required capabilities comparable.
+              </p>
+              <p>
+                For my custom pieces, keep documented interfaces, tests, backups and a recovery path.
+                If Pi’s changing interfaces make these expensive to preserve, its advantage shrinks.
+                If OpenClaw preserves my workflows through upgrades, makes automation and costs legible,
+                enforces the limits I need and saves more maintenance than it creates, I would reconsider.
+                Dependable delegation is agency too.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <aside class="research-takeaway">
+          <p class="eyebrow">The standard I care about</p>
+          <h3>Useful work. Chosen dependencies. Fewer surprises.</h3>
+          <p>
+            Agency is the practical ability to choose outcomes, constrain delegated authority, and
+            change or end the arrangement at an acceptable cost. Integration earns its place when it
+            absorbs work; modularity earns its place when I can change one part without repairing the
+            rest. Neither deserves trust just because of its label.
+          </p>
+          <p>
+            OpenClaw may yet earn an Apple-like reputation for a coherent, dependable finished
+            experience; it need not become closed source to do that. For now, I am curious how far
+            open-source components and bespoke setups can take us as agents get better at helping us
+            inspect, build and test our tools. Smarter agents could make that assembly more accessible.
+            They will not automatically remove maintenance or make their own judgment predictable.
+          </p>
+          <blockquote>
+            I did not stop depending on other people’s software. I gained more say over which
+            dependencies I accepted, what authority they had, and what I could do when they failed.
+          </blockquote>
+        </aside>
+        <p class="research-source-note">
+          Primary sources checked <time datetime="2026-09-05">5 September 2026</time>. Project accounts
+          describe their own failures and intended remedies; current policies can change. My experience
+          is not a controlled reliability or security comparison.
+        </p>
       </section>
 
       <section class="stack section-pad" id="stack">
         <div class="section-heading">
           <div>
-            <div class="section-index">03 / The stack</div>
+            <div class="section-index">04 / The stack</div>
             <p class="eyebrow">Small pieces, clear jobs</p>
             <h2>Four tools.<br /><em>No mystery layer.</em></h2>
           </div>
@@ -466,7 +947,7 @@ Examine where each approach leaks abstraction—for example, when users must und
           </div>
           <div class="meter-row">
             <span class="meter-state off">no call</span>
-            <span>Nothing is scheduled and you are away</span>
+            <span>No task is active and no request or enabled automation starts one</span>
           </div>
         </div>
       </section>
@@ -474,7 +955,7 @@ Examine where each approach leaks abstraction—for example, when users must und
       <section class="setup section-pad" id="start">
         <div class="section-heading setup-heading">
           <div>
-            <div class="section-index">04 / Set up</div>
+            <div class="section-index">05 / Set up</div>
             <p class="eyebrow">A calm first ten minutes</p>
             <h2>Begin with one piece.</h2>
           </div>
@@ -560,7 +1041,7 @@ Examine where each approach leaks abstraction—for example, when users must und
       <section class="optional section-pad">
         <div class="section-heading compact-heading">
           <div>
-            <div class="section-index">05 / Add what you need</div>
+            <div class="section-index">06 / Add what you need</div>
             <h2>The optional layers.</h2>
           </div>
           <p class="section-summary">Get comfortable with Pi first. Then add one interface at a time.</p>
@@ -787,7 +1268,7 @@ Never enumerate, read, or modify any note other than the two exact names above. 
       <section class="migration section-pad" id="migrate">
         <div class="migration-intro">
           <div>
-            <div class="section-index light-index">06 / Migrate</div>
+            <div class="section-index light-index">07 / Migrate</div>
             <p class="eyebrow">Already using OpenClaw?</p>
             <h2>Let Pi do the careful<br /><em>sorting for you.</em></h2>
           </div>
@@ -885,7 +1366,7 @@ Safety rules:
       <section class="comparison section-pad">
         <div class="section-heading compact-heading">
           <div>
-            <div class="section-index">07 / What changes</div>
+            <div class="section-index">08 / What changes</div>
             <h2>A different mental model.</h2>
           </div>
           <p class="section-summary">This setup trades an integrated control plane for parts you can see and replace.</p>
@@ -901,7 +1382,7 @@ Safety rules:
             <strong role="cell">Saved work</strong><span role="cell">Platform-managed history</span><span role="cell"><b>Local Pi sessions</b>, resumable from CLI</span>
           </div>
           <div class="comparison-row" role="row">
-            <strong role="cell">Background work</strong><span role="cell">Jobs plus heartbeat machinery</span><span role="cell"><b>Only schedules you create</b></span>
+            <strong role="cell">Background work</strong><span role="cell">Jobs plus configurable heartbeat machinery</span><span role="cell"><b>Explicitly enabled automations</b></span>
           </div>
           <div class="comparison-row" role="row">
             <strong role="cell">Browser</strong><span role="cell">Built-in control interface</span><span role="cell"><b>Optional Livecraft</b>, running locally</span>
@@ -917,7 +1398,7 @@ Safety rules:
 
       <section class="faq section-pad" id="questions">
         <div class="faq-title">
-          <div class="section-index">08 / Questions</div>
+          <div class="section-index">09 / Questions</div>
           <p class="eyebrow">Plain answers</p>
           <h2>Before you switch.</h2>
         </div>
@@ -936,7 +1417,7 @@ Safety rules:
           </details>
           <details>
             <summary>Is Pi sandboxed?<span>+</span></summary>
-            <p>No. Pi runs locally with your user account’s permissions. Start it in a folder you understand, keep backups or use Git, review third-party skills, and read commands before approving sensitive work.</p>
+            <p>No, not by default. Pi and its extensions run with your user account’s permissions. A working folder or a prompt does not confine them, and there is no default per-command approval gate. For sensitive work, restrict credentials and operating-system permissions or use a suitably configured sandbox. Keep backups and review third-party code.</p>
           </details>
           <details>
             <summary>Can I see a cron session while it runs?<span>+</span></summary>

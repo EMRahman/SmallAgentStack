@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Evidence preview — The Small Agent Stack</title><style>
+:root { color-scheme: light; --paper:#f3f0e8; --ink:#17201f; --muted:#535f58; }
+* { box-sizing:border-box; } body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 system-ui,sans-serif; }
+main { max-width:1280px; margin:auto; padding:40px 24px 80px; } a { color:inherit; text-underline-offset:3px; }
+.kicker { font:12px/1.5 ui-monospace,monospace; text-transform:uppercase; letter-spacing:.1em; }
+h1 { font:clamp(36px,6vw,70px)/1.06 Georgia,serif; letter-spacing:-.035em; max-width:1000px; margin:24px 0; }
+h2 { font:32px/1.2 Georgia,serif; margin:36px 0 20px; } h3 { font-size:18px; line-height:1.35; margin:0 0 10px; }
+.intro { max-width:850px; font-size:19px; } .note { padding:20px 24px; border:1px solid #9aa499; background:#e4ebdf; }
+.legend { display:flex; flex-wrap:wrap; gap:16px 28px; padding:22px 0; } .legend span { display:flex; align-items:center; gap:10px; }
+.swatch { display:inline-block; width:32px; border-top:3px solid #a74830; } .swatch.pi { border-color:#226a4b; border-top-style:dashed; }
+.grid,.dates { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+.dates { margin:30px 0; padding:24px 0; border-top:1px solid #b7bdb4; border-bottom:1px solid #b7bdb4; }
+.dates p,figcaption { color:var(--muted); font-size:14px; margin:0; }
+figure { margin:0; min-width:0; padding:22px; border:1px solid #b7bdb4; background:#faf8f2; }
+svg { display:block; width:100%; height:auto; overflow:visible; } svg text { font:18px system-ui,sans-serif; fill:#46514a; }
+figcaption { margin-top:12px; } .table-scroll { max-width:100%; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; text-align:left; font-size:14px; }
+caption { text-align:left; margin:12px 0; color:var(--muted); } th,td { padding:12px; border-bottom:1px solid #bbc1b8; white-space:nowrap; }
+tbody th { white-space:normal; } thead { background:#e4ebdf; } summary { cursor:pointer; font-weight:650; padding:18px 0; }
+li { margin:10px 0; } .links { display:flex; flex-wrap:wrap; gap:12px 24px; margin:24px 0; }
+footer { margin-top:40px; padding-top:20px; border-top:1px solid #b7bdb4; color:var(--muted); font-size:13px; }
+:focus-visible { outline:3px solid #226a4b; outline-offset:4px; }
+@media(max-width:760px) { .grid,.dates { grid-template-columns:1fr; } main { padding:24px 14px 60px; } figure { padding:16px 10px; } }
+@media print { details > * { display:block; } figure { break-inside:avoid; } }
+</style></head>
+<body><main>
+<header><p class="kicker">Supplementary evidence preview · Small Agent Stack</p><a href="../index.html#evidence">Back to the main guide</a>
+<h1>Equal project age.<br>Different responsibilities.</h1>
+<p class="intro">Compare public activity from each repository’s beginning, rather than giving both the same calendar window. The first <strong>285 days</strong> are observed for both. The older repository’s additional history stays visible, but is not an equal-age comparison.</p></header>
+<p class="note"><strong>Activity, not a reliability ranking.</strong> Equal ages remove one distortion, not all of them. We do not know active installations, attempted upgrades, failure rates or operator hours. These charts cannot establish that one product is more dependable.</p>
+<div class="dates"><div><h3>OpenClaw</h3><p>Repository created <strong>2025-11-24</strong><br>Earliest retained non-prerelease GitHub release: 2025-11-25<br>Equal-age window ends 2026-09-04 (inclusive)<br>Full observed span: 285 calendar days</p></div><div><h3>Pi</h3><p>Repository created <strong>2025-08-09</strong><br>Earliest retained non-prerelease GitHub release: 2025-12-02<br>Equal-age window ends 2026-05-20 (inclusive)<br>Full observed span: 392 calendar days</p></div></div>
+<div class="legend" aria-label="Chart legend"><span><i class="swatch" aria-hidden="true"></i>OpenClaw · solid rust</span><span><i class="swatch pi" aria-hidden="true"></i>Pi · dashed green</span><span>Grey region: beyond the shared 285-day window</span></div>
+<div class="grid"><figure><h3>Non-prerelease releases published</h3><svg viewBox="0 0 620 320" role="img" aria-labelledby="releases-title releases-desc">
+<title id="releases-title">Non-prerelease releases published</title>
+<desc id="releases-desc">Cumulative counts since repository creation, on a shared linear scale starting at zero. Both projects have observations through day 285. The shaded region has only the older repository’s observations. Exact values and dates are in the data table below.</desc>
+<rect x="416.07" y="55" width="163.93" height="203" fill="#dce1da"/>
+<text x="498.04" y="45" text-anchor="middle" font-size="12">Older repo only</text>
+<line x1="70" y1="258.00" x2="580" y2="258.00" stroke="#cbd0c8"/>
+<text x="60" y="262.00" text-anchor="end">0</text>
+<line x1="70" y1="209.50" x2="580" y2="209.50" stroke="#cbd0c8"/>
+<text x="60" y="213.50" text-anchor="end">100</text>
+<line x1="70" y1="161.00" x2="580" y2="161.00" stroke="#cbd0c8"/>
+<text x="60" y="165.00" text-anchor="end">200</text>
+<line x1="70" y1="112.50" x2="580" y2="112.50" stroke="#cbd0c8"/>
+<text x="60" y="116.50" text-anchor="end">300</text>
+<line x1="70" y1="64.00" x2="580" y2="64.00" stroke="#cbd0c8"/>
+<text x="60" y="68.00" text-anchor="end">400</text>
+<text x="70.00" y="282" text-anchor="middle">0</text>
+<text x="142.86" y="282" text-anchor="middle">60</text>
+<text x="215.71" y="282" text-anchor="middle">120</text>
+<text x="288.57" y="282" text-anchor="middle">180</text>
+<text x="361.43" y="282" text-anchor="middle">240</text>
+<text x="434.29" y="282" text-anchor="middle">300</text>
+<text x="507.14" y="282" text-anchor="middle">360</text>
+<text x="580.00" y="282" text-anchor="middle">420</text>
+<line x1="416.07" y1="55" x2="416.07" y2="258" stroke="#626a66" stroke-dasharray="3 4"/>
+<text x="325" y="310" text-anchor="middle">Days since repository creation</text>
+<polyline points="70.00,258.00 106.43,253.63 142.86,243.94 179.29,235.69 215.71,228.90 252.14,221.14 288.57,212.41 325.00,208.05 361.43,206.59 397.86,204.65 416.07,203.19" fill="none" stroke="#a74830" stroke-width="3"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#a74830"><title>OpenClaw, day 0: 0; through 2025-11-24 exclusive</title></circle>
+<circle cx="106.43" cy="253.63" r="3.4" fill="#a74830"><title>OpenClaw, day 30: 9; through 2025-12-24 exclusive</title></circle>
+<circle cx="142.86" cy="243.94" r="3.4" fill="#a74830"><title>OpenClaw, day 60: 29; through 2026-01-23 exclusive</title></circle>
+<circle cx="179.29" cy="235.69" r="3.4" fill="#a74830"><title>OpenClaw, day 90: 46; through 2026-02-22 exclusive</title></circle>
+<circle cx="215.71" cy="228.90" r="3.4" fill="#a74830"><title>OpenClaw, day 120: 60; through 2026-03-24 exclusive</title></circle>
+<circle cx="252.14" cy="221.14" r="3.4" fill="#a74830"><title>OpenClaw, day 150: 76; through 2026-04-23 exclusive</title></circle>
+<circle cx="288.57" cy="212.41" r="3.4" fill="#a74830"><title>OpenClaw, day 180: 94; through 2026-05-23 exclusive</title></circle>
+<circle cx="325.00" cy="208.05" r="3.4" fill="#a74830"><title>OpenClaw, day 210: 103; through 2026-06-22 exclusive</title></circle>
+<circle cx="361.43" cy="206.59" r="3.4" fill="#a74830"><title>OpenClaw, day 240: 106; through 2026-07-22 exclusive</title></circle>
+<circle cx="397.86" cy="204.65" r="3.4" fill="#a74830"><title>OpenClaw, day 270: 110; through 2026-08-21 exclusive</title></circle>
+<circle cx="416.07" cy="203.19" r="3.4" fill="#a74830"><title>OpenClaw, day 285: 113; through 2026-09-05 exclusive</title></circle>
+<polyline points="70.00,258.00 106.43,258.00 142.86,258.00 179.29,258.00 215.71,249.75 252.14,213.87 288.57,189.62 325.00,177.00 361.43,168.27 397.86,155.18 416.07,151.30 434.29,148.39 470.71,141.12 507.14,135.78 543.57,133.36 546.00,132.87" fill="none" stroke="#226a4b" stroke-width="3" stroke-dasharray="7 4"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 0: 0; through 2025-08-09 exclusive</title></circle>
+<circle cx="106.43" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 30: 0; through 2025-09-08 exclusive</title></circle>
+<circle cx="142.86" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 60: 0; through 2025-10-08 exclusive</title></circle>
+<circle cx="179.29" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 90: 0; through 2025-11-07 exclusive</title></circle>
+<circle cx="215.71" cy="249.75" r="3.4" fill="#226a4b"><title>Pi, day 120: 17; through 2025-12-07 exclusive</title></circle>
+<circle cx="252.14" cy="213.87" r="3.4" fill="#226a4b"><title>Pi, day 150: 91; through 2026-01-06 exclusive</title></circle>
+<circle cx="288.57" cy="189.62" r="3.4" fill="#226a4b"><title>Pi, day 180: 141; through 2026-02-05 exclusive</title></circle>
+<circle cx="325.00" cy="177.00" r="3.4" fill="#226a4b"><title>Pi, day 210: 167; through 2026-03-07 exclusive</title></circle>
+<circle cx="361.43" cy="168.27" r="3.4" fill="#226a4b"><title>Pi, day 240: 185; through 2026-04-06 exclusive</title></circle>
+<circle cx="397.86" cy="155.18" r="3.4" fill="#226a4b"><title>Pi, day 270: 212; through 2026-05-06 exclusive</title></circle>
+<circle cx="416.07" cy="151.30" r="3.4" fill="#226a4b"><title>Pi, day 285: 220; through 2026-05-21 exclusive</title></circle>
+<circle cx="434.29" cy="148.39" r="3.4" fill="#226a4b"><title>Pi, day 300: 226; through 2026-06-05 exclusive</title></circle>
+<circle cx="470.71" cy="141.12" r="3.4" fill="#226a4b"><title>Pi, day 330: 241; through 2026-07-05 exclusive</title></circle>
+<circle cx="507.14" cy="135.78" r="3.4" fill="#226a4b"><title>Pi, day 360: 252; through 2026-08-04 exclusive</title></circle>
+<circle cx="543.57" cy="133.36" r="3.4" fill="#226a4b"><title>Pi, day 390: 257; through 2026-09-03 exclusive</title></circle>
+<circle cx="546.00" cy="132.87" r="3.4" fill="#226a4b"><title>Pi, day 392: 258; through 2026-09-05 exclusive</title></circle>
+</svg><figcaption>Currently retained, published GitHub releases excluding drafts and prereleases. More releases do not mean more reliability.</figcaption></figure><figure><h3>All issue reports opened</h3><svg viewBox="0 0 620 320" role="img" aria-labelledby="issues-title issues-desc">
+<title id="issues-title">All issue reports opened</title>
+<desc id="issues-desc">Cumulative counts since repository creation, on a shared linear scale starting at zero. Both projects have observations through day 285. The shaded region has only the older repository’s observations. Exact values and dates are in the data table below.</desc>
+<rect x="416.07" y="55" width="163.93" height="203" fill="#dce1da"/>
+<text x="498.04" y="45" text-anchor="middle" font-size="12">Older repo only</text>
+<line x1="70" y1="258.00" x2="580" y2="258.00" stroke="#cbd0c8"/>
+<text x="60" y="262.00" text-anchor="end">0</text>
+<line x1="70" y1="209.50" x2="580" y2="209.50" stroke="#cbd0c8"/>
+<text x="60" y="213.50" text-anchor="end">20,000</text>
+<line x1="70" y1="161.00" x2="580" y2="161.00" stroke="#cbd0c8"/>
+<text x="60" y="165.00" text-anchor="end">40,000</text>
+<line x1="70" y1="112.50" x2="580" y2="112.50" stroke="#cbd0c8"/>
+<text x="60" y="116.50" text-anchor="end">60,000</text>
+<line x1="70" y1="64.00" x2="580" y2="64.00" stroke="#cbd0c8"/>
+<text x="60" y="68.00" text-anchor="end">80,000</text>
+<text x="70.00" y="282" text-anchor="middle">0</text>
+<text x="142.86" y="282" text-anchor="middle">60</text>
+<text x="215.71" y="282" text-anchor="middle">120</text>
+<text x="288.57" y="282" text-anchor="middle">180</text>
+<text x="361.43" y="282" text-anchor="middle">240</text>
+<text x="434.29" y="282" text-anchor="middle">300</text>
+<text x="507.14" y="282" text-anchor="middle">360</text>
+<text x="580.00" y="282" text-anchor="middle">420</text>
+<line x1="416.07" y1="55" x2="416.07" y2="258" stroke="#626a66" stroke-dasharray="3 4"/>
+<text x="325" y="310" text-anchor="middle">Days since repository creation</text>
+<polyline points="70.00,258.00 106.43,257.93 142.86,256.80 179.29,232.23 215.71,204.62 252.14,183.89 288.57,167.76 325.00,160.26 361.43,150.18 397.86,142.22 416.07,133.99" fill="none" stroke="#a74830" stroke-width="3"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#a74830"><title>OpenClaw, day 0: 0; through 2025-11-24 exclusive</title></circle>
+<circle cx="106.43" cy="257.93" r="3.4" fill="#a74830"><title>OpenClaw, day 30: 28; through 2025-12-24 exclusive</title></circle>
+<circle cx="142.86" cy="256.80" r="3.4" fill="#a74830"><title>OpenClaw, day 60: 496; through 2026-01-23 exclusive</title></circle>
+<circle cx="179.29" cy="232.23" r="3.4" fill="#a74830"><title>OpenClaw, day 90: 10,628; through 2026-02-22 exclusive</title></circle>
+<circle cx="215.71" cy="204.62" r="3.4" fill="#a74830"><title>OpenClaw, day 120: 22,012; through 2026-03-24 exclusive</title></circle>
+<circle cx="252.14" cy="183.89" r="3.4" fill="#a74830"><title>OpenClaw, day 150: 30,559; through 2026-04-23 exclusive</title></circle>
+<circle cx="288.57" cy="167.76" r="3.4" fill="#a74830"><title>OpenClaw, day 180: 37,212; through 2026-05-23 exclusive</title></circle>
+<circle cx="325.00" cy="160.26" r="3.4" fill="#a74830"><title>OpenClaw, day 210: 40,304; through 2026-06-22 exclusive</title></circle>
+<circle cx="361.43" cy="150.18" r="3.4" fill="#a74830"><title>OpenClaw, day 240: 44,462; through 2026-07-22 exclusive</title></circle>
+<circle cx="397.86" cy="142.22" r="3.4" fill="#a74830"><title>OpenClaw, day 270: 47,745; through 2026-08-21 exclusive</title></circle>
+<circle cx="416.07" cy="133.99" r="3.4" fill="#a74830"><title>OpenClaw, day 285: 51,140; through 2026-09-05 exclusive</title></circle>
+<polyline points="70.00,258.00 106.43,258.00 142.86,258.00 179.29,258.00 215.71,257.79 252.14,257.45 288.57,256.63 325.00,256.10 361.43,254.59 397.86,252.22 416.07,251.15 434.29,250.20 470.71,248.65 507.14,246.64 543.57,244.21 546.00,243.99" fill="none" stroke="#226a4b" stroke-width="3" stroke-dasharray="7 4"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 0: 0; through 2025-08-09 exclusive</title></circle>
+<circle cx="106.43" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 30: 0; through 2025-09-08 exclusive</title></circle>
+<circle cx="142.86" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 60: 0; through 2025-10-08 exclusive</title></circle>
+<circle cx="179.29" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 90: 0; through 2025-11-07 exclusive</title></circle>
+<circle cx="215.71" cy="257.79" r="3.4" fill="#226a4b"><title>Pi, day 120: 85; through 2025-12-07 exclusive</title></circle>
+<circle cx="252.14" cy="257.45" r="3.4" fill="#226a4b"><title>Pi, day 150: 225; through 2026-01-06 exclusive</title></circle>
+<circle cx="288.57" cy="256.63" r="3.4" fill="#226a4b"><title>Pi, day 180: 566; through 2026-02-05 exclusive</title></circle>
+<circle cx="325.00" cy="256.10" r="3.4" fill="#226a4b"><title>Pi, day 210: 785; through 2026-03-07 exclusive</title></circle>
+<circle cx="361.43" cy="254.59" r="3.4" fill="#226a4b"><title>Pi, day 240: 1,407; through 2026-04-06 exclusive</title></circle>
+<circle cx="397.86" cy="252.22" r="3.4" fill="#226a4b"><title>Pi, day 270: 2,383; through 2026-05-06 exclusive</title></circle>
+<circle cx="416.07" cy="251.15" r="3.4" fill="#226a4b"><title>Pi, day 285: 2,825; through 2026-05-21 exclusive</title></circle>
+<circle cx="434.29" cy="250.20" r="3.4" fill="#226a4b"><title>Pi, day 300: 3,217; through 2026-06-05 exclusive</title></circle>
+<circle cx="470.71" cy="248.65" r="3.4" fill="#226a4b"><title>Pi, day 330: 3,855; through 2026-07-05 exclusive</title></circle>
+<circle cx="507.14" cy="246.64" r="3.4" fill="#226a4b"><title>Pi, day 360: 4,684; through 2026-08-04 exclusive</title></circle>
+<circle cx="543.57" cy="244.21" r="3.4" fill="#226a4b"><title>Pi, day 390: 5,688; through 2026-09-03 exclusive</title></circle>
+<circle cx="546.00" cy="243.99" r="3.4" fill="#226a4b"><title>Pi, day 392: 5,777; through 2026-09-05 exclusive</title></circle>
+</svg><figcaption>Open and closed issues; pull requests excluded. Reporting volume is not the number of broken installations.</figcaption></figure><figure><h3>Reports currently labelled bug</h3><svg viewBox="0 0 620 320" role="img" aria-labelledby="bugs-title bugs-desc">
+<title id="bugs-title">Reports currently labelled bug</title>
+<desc id="bugs-desc">Cumulative counts since repository creation, on a shared linear scale starting at zero. Both projects have observations through day 285. The shaded region has only the older repository’s observations. Exact values and dates are in the data table below.</desc>
+<rect x="416.07" y="55" width="163.93" height="203" fill="#dce1da"/>
+<text x="498.04" y="45" text-anchor="middle" font-size="12">Older repo only</text>
+<line x1="70" y1="258.00" x2="580" y2="258.00" stroke="#cbd0c8"/>
+<text x="60" y="262.00" text-anchor="end">0</text>
+<line x1="70" y1="209.50" x2="580" y2="209.50" stroke="#cbd0c8"/>
+<text x="60" y="213.50" text-anchor="end">5,000</text>
+<line x1="70" y1="161.00" x2="580" y2="161.00" stroke="#cbd0c8"/>
+<text x="60" y="165.00" text-anchor="end">10,000</text>
+<line x1="70" y1="112.50" x2="580" y2="112.50" stroke="#cbd0c8"/>
+<text x="60" y="116.50" text-anchor="end">15,000</text>
+<line x1="70" y1="64.00" x2="580" y2="64.00" stroke="#cbd0c8"/>
+<text x="60" y="68.00" text-anchor="end">20,000</text>
+<text x="70.00" y="282" text-anchor="middle">0</text>
+<text x="142.86" y="282" text-anchor="middle">60</text>
+<text x="215.71" y="282" text-anchor="middle">120</text>
+<text x="288.57" y="282" text-anchor="middle">180</text>
+<text x="361.43" y="282" text-anchor="middle">240</text>
+<text x="434.29" y="282" text-anchor="middle">300</text>
+<text x="507.14" y="282" text-anchor="middle">360</text>
+<text x="580.00" y="282" text-anchor="middle">420</text>
+<line x1="416.07" y1="55" x2="416.07" y2="258" stroke="#626a66" stroke-dasharray="3 4"/>
+<text x="325" y="310" text-anchor="middle">Days since repository creation</text>
+<polyline points="70.00,258.00 106.43,257.97 142.86,255.39 179.29,211.60 215.71,183.83 252.14,164.45 288.57,150.92 325.00,145.54 361.43,138.20 397.86,130.36 416.07,119.14" fill="none" stroke="#a74830" stroke-width="3"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#a74830"><title>OpenClaw, day 0: 0; through 2025-11-24 exclusive</title></circle>
+<circle cx="106.43" cy="257.97" r="3.4" fill="#a74830"><title>OpenClaw, day 30: 3; through 2025-12-24 exclusive</title></circle>
+<circle cx="142.86" cy="255.39" r="3.4" fill="#a74830"><title>OpenClaw, day 60: 269; through 2026-01-23 exclusive</title></circle>
+<circle cx="179.29" cy="211.60" r="3.4" fill="#a74830"><title>OpenClaw, day 90: 4,784; through 2026-02-22 exclusive</title></circle>
+<circle cx="215.71" cy="183.83" r="3.4" fill="#a74830"><title>OpenClaw, day 120: 7,646; through 2026-03-24 exclusive</title></circle>
+<circle cx="252.14" cy="164.45" r="3.4" fill="#a74830"><title>OpenClaw, day 150: 9,644; through 2026-04-23 exclusive</title></circle>
+<circle cx="288.57" cy="150.92" r="3.4" fill="#a74830"><title>OpenClaw, day 180: 11,039; through 2026-05-23 exclusive</title></circle>
+<circle cx="325.00" cy="145.54" r="3.4" fill="#a74830"><title>OpenClaw, day 210: 11,594; through 2026-06-22 exclusive</title></circle>
+<circle cx="361.43" cy="138.20" r="3.4" fill="#a74830"><title>OpenClaw, day 240: 12,350; through 2026-07-22 exclusive</title></circle>
+<circle cx="397.86" cy="130.36" r="3.4" fill="#a74830"><title>OpenClaw, day 270: 13,159; through 2026-08-21 exclusive</title></circle>
+<circle cx="416.07" cy="119.14" r="3.4" fill="#a74830"><title>OpenClaw, day 285: 14,315; through 2026-09-05 exclusive</title></circle>
+<polyline points="70.00,258.00 106.43,258.00 142.86,258.00 179.29,258.00 215.71,257.99 252.14,257.84 288.57,257.21 325.00,256.62 361.43,254.82 397.86,251.28 416.07,249.62 434.29,248.26 470.71,246.33 507.14,244.27 543.57,242.13 546.00,241.95" fill="none" stroke="#226a4b" stroke-width="3" stroke-dasharray="7 4"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 0: 0; through 2025-08-09 exclusive</title></circle>
+<circle cx="106.43" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 30: 0; through 2025-09-08 exclusive</title></circle>
+<circle cx="142.86" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 60: 0; through 2025-10-08 exclusive</title></circle>
+<circle cx="179.29" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 90: 0; through 2025-11-07 exclusive</title></circle>
+<circle cx="215.71" cy="257.99" r="3.4" fill="#226a4b"><title>Pi, day 120: 1; through 2025-12-07 exclusive</title></circle>
+<circle cx="252.14" cy="257.84" r="3.4" fill="#226a4b"><title>Pi, day 150: 16; through 2026-01-06 exclusive</title></circle>
+<circle cx="288.57" cy="257.21" r="3.4" fill="#226a4b"><title>Pi, day 180: 81; through 2026-02-05 exclusive</title></circle>
+<circle cx="325.00" cy="256.62" r="3.4" fill="#226a4b"><title>Pi, day 210: 142; through 2026-03-07 exclusive</title></circle>
+<circle cx="361.43" cy="254.82" r="3.4" fill="#226a4b"><title>Pi, day 240: 328; through 2026-04-06 exclusive</title></circle>
+<circle cx="397.86" cy="251.28" r="3.4" fill="#226a4b"><title>Pi, day 270: 693; through 2026-05-06 exclusive</title></circle>
+<circle cx="416.07" cy="249.62" r="3.4" fill="#226a4b"><title>Pi, day 285: 864; through 2026-05-21 exclusive</title></circle>
+<circle cx="434.29" cy="248.26" r="3.4" fill="#226a4b"><title>Pi, day 300: 1,004; through 2026-06-05 exclusive</title></circle>
+<circle cx="470.71" cy="246.33" r="3.4" fill="#226a4b"><title>Pi, day 330: 1,203; through 2026-07-05 exclusive</title></circle>
+<circle cx="507.14" cy="244.27" r="3.4" fill="#226a4b"><title>Pi, day 360: 1,415; through 2026-08-04 exclusive</title></circle>
+<circle cx="543.57" cy="242.13" r="3.4" fill="#226a4b"><title>Pi, day 390: 1,636; through 2026-09-03 exclusive</title></circle>
+<circle cx="546.00" cy="241.95" r="3.4" fill="#226a4b"><title>Pi, day 392: 1,655; through 2026-09-05 exclusive</title></circle>
+</svg><figcaption>Issues created in each window that carry the bug label now. Historical label states are not reconstructed.</figcaption></figure><figure><h3>Update / upgrade bug reports</h3><svg viewBox="0 0 620 320" role="img" aria-labelledby="upgrade_bugs-title upgrade_bugs-desc">
+<title id="upgrade_bugs-title">Update / upgrade bug reports</title>
+<desc id="upgrade_bugs-desc">Cumulative counts since repository creation, on a shared linear scale starting at zero. Both projects have observations through day 285. The shaded region has only the older repository’s observations. Exact values and dates are in the data table below.</desc>
+<rect x="416.07" y="55" width="163.93" height="203" fill="#dce1da"/>
+<text x="498.04" y="45" text-anchor="middle" font-size="12">Older repo only</text>
+<line x1="70" y1="258.00" x2="580" y2="258.00" stroke="#cbd0c8"/>
+<text x="60" y="262.00" text-anchor="end">0</text>
+<line x1="70" y1="209.50" x2="580" y2="209.50" stroke="#cbd0c8"/>
+<text x="60" y="213.50" text-anchor="end">200</text>
+<line x1="70" y1="161.00" x2="580" y2="161.00" stroke="#cbd0c8"/>
+<text x="60" y="165.00" text-anchor="end">400</text>
+<line x1="70" y1="112.50" x2="580" y2="112.50" stroke="#cbd0c8"/>
+<text x="60" y="116.50" text-anchor="end">600</text>
+<line x1="70" y1="64.00" x2="580" y2="64.00" stroke="#cbd0c8"/>
+<text x="60" y="68.00" text-anchor="end">800</text>
+<text x="70.00" y="282" text-anchor="middle">0</text>
+<text x="142.86" y="282" text-anchor="middle">60</text>
+<text x="215.71" y="282" text-anchor="middle">120</text>
+<text x="288.57" y="282" text-anchor="middle">180</text>
+<text x="361.43" y="282" text-anchor="middle">240</text>
+<text x="434.29" y="282" text-anchor="middle">300</text>
+<text x="507.14" y="282" text-anchor="middle">360</text>
+<text x="580.00" y="282" text-anchor="middle">420</text>
+<line x1="416.07" y1="55" x2="416.07" y2="258" stroke="#626a66" stroke-dasharray="3 4"/>
+<text x="325" y="310" text-anchor="middle">Days since repository creation</text>
+<polyline points="70.00,258.00 106.43,258.00 142.86,256.79 179.29,223.81 215.71,192.04 252.14,161.73 288.57,135.54 325.00,127.78 361.43,121.23 397.86,113.71 416.07,102.56" fill="none" stroke="#a74830" stroke-width="3"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#a74830"><title>OpenClaw, day 0: 0; through 2025-11-24 exclusive</title></circle>
+<circle cx="106.43" cy="258.00" r="3.4" fill="#a74830"><title>OpenClaw, day 30: 0; through 2025-12-24 exclusive</title></circle>
+<circle cx="142.86" cy="256.79" r="3.4" fill="#a74830"><title>OpenClaw, day 60: 5; through 2026-01-23 exclusive</title></circle>
+<circle cx="179.29" cy="223.81" r="3.4" fill="#a74830"><title>OpenClaw, day 90: 141; through 2026-02-22 exclusive</title></circle>
+<circle cx="215.71" cy="192.04" r="3.4" fill="#a74830"><title>OpenClaw, day 120: 272; through 2026-03-24 exclusive</title></circle>
+<circle cx="252.14" cy="161.73" r="3.4" fill="#a74830"><title>OpenClaw, day 150: 397; through 2026-04-23 exclusive</title></circle>
+<circle cx="288.57" cy="135.54" r="3.4" fill="#a74830"><title>OpenClaw, day 180: 505; through 2026-05-23 exclusive</title></circle>
+<circle cx="325.00" cy="127.78" r="3.4" fill="#a74830"><title>OpenClaw, day 210: 537; through 2026-06-22 exclusive</title></circle>
+<circle cx="361.43" cy="121.23" r="3.4" fill="#a74830"><title>OpenClaw, day 240: 564; through 2026-07-22 exclusive</title></circle>
+<circle cx="397.86" cy="113.71" r="3.4" fill="#a74830"><title>OpenClaw, day 270: 595; through 2026-08-21 exclusive</title></circle>
+<circle cx="416.07" cy="102.56" r="3.4" fill="#a74830"><title>OpenClaw, day 285: 641; through 2026-09-05 exclusive</title></circle>
+<polyline points="70.00,258.00 106.43,258.00 142.86,258.00 179.29,258.00 215.71,258.00 252.14,258.00 288.57,257.51 325.00,257.27 361.43,256.55 397.86,253.63 416.07,249.75 434.29,247.57 470.71,245.63 507.14,243.45 543.57,241.51 546.00,241.51" fill="none" stroke="#226a4b" stroke-width="3" stroke-dasharray="7 4"/>
+<circle cx="70.00" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 0: 0; through 2025-08-09 exclusive</title></circle>
+<circle cx="106.43" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 30: 0; through 2025-09-08 exclusive</title></circle>
+<circle cx="142.86" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 60: 0; through 2025-10-08 exclusive</title></circle>
+<circle cx="179.29" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 90: 0; through 2025-11-07 exclusive</title></circle>
+<circle cx="215.71" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 120: 0; through 2025-12-07 exclusive</title></circle>
+<circle cx="252.14" cy="258.00" r="3.4" fill="#226a4b"><title>Pi, day 150: 0; through 2026-01-06 exclusive</title></circle>
+<circle cx="288.57" cy="257.51" r="3.4" fill="#226a4b"><title>Pi, day 180: 2; through 2026-02-05 exclusive</title></circle>
+<circle cx="325.00" cy="257.27" r="3.4" fill="#226a4b"><title>Pi, day 210: 3; through 2026-03-07 exclusive</title></circle>
+<circle cx="361.43" cy="256.55" r="3.4" fill="#226a4b"><title>Pi, day 240: 6; through 2026-04-06 exclusive</title></circle>
+<circle cx="397.86" cy="253.63" r="3.4" fill="#226a4b"><title>Pi, day 270: 18; through 2026-05-06 exclusive</title></circle>
+<circle cx="416.07" cy="249.75" r="3.4" fill="#226a4b"><title>Pi, day 285: 34; through 2026-05-21 exclusive</title></circle>
+<circle cx="434.29" cy="247.57" r="3.4" fill="#226a4b"><title>Pi, day 300: 43; through 2026-06-05 exclusive</title></circle>
+<circle cx="470.71" cy="245.63" r="3.4" fill="#226a4b"><title>Pi, day 330: 51; through 2026-07-05 exclusive</title></circle>
+<circle cx="507.14" cy="243.45" r="3.4" fill="#226a4b"><title>Pi, day 360: 60; through 2026-08-04 exclusive</title></circle>
+<circle cx="543.57" cy="241.51" r="3.4" fill="#226a4b"><title>Pi, day 390: 68; through 2026-09-03 exclusive</title></circle>
+<circle cx="546.00" cy="241.51" r="3.4" fill="#226a4b"><title>Pi, day 392: 68; through 2026-09-05 exclusive</title></circle>
+</svg><figcaption>Currently bug-labelled issues with update or upgrade in the title. This misses failures described only in the body.</figcaption></figure><figure><h3>Update / upgrade share of bug reports</h3><svg viewBox="0 0 620 190" role="img" aria-labelledby="share-title">
+<title id="share-title">Share of bug-labelled reports in each repository’s first 285 days</title>
+<text x="24" y="34">OpenClaw · 4.48%</text>
+<rect x="24" y="46" width="550" height="19" rx="3" fill="#dce1da"/>
+<rect x="24" y="46" width="24.63" height="19" rx="3" fill="#a74830"/>
+<text x="24" y="109">Pi · 3.94%</text>
+<rect x="24" y="121" width="550" height="19" rx="3" fill="#dce1da"/>
+<rect x="24" y="121" width="21.64" height="19" rx="3" fill="#226a4b"/>
+</svg><figcaption>First 285 days for both. Percentage of reports, not users or upgrades. Full 0–100% scale; differing labels and reporting practices still matter.</figcaption></figure><figure><h3>Audience now — not age-aligned</h3><svg viewBox="0 0 620 190" role="img" aria-labelledby="stars-title">
+<title id="stars-title">Current GitHub stars, not historical audience or active users</title>
+<text x="24" y="34">OpenClaw · 388,952 stars</text>
+<rect x="24" y="46" width="550" height="19" rx="3" fill="#dce1da"/>
+<rect x="24" y="46" width="550.00" height="19" rx="3" fill="#a74830"/>
+<text x="24" y="109">Pi · 102,083 stars</text>
+<rect x="24" y="121" width="550" height="19" rx="3" fill="#dce1da"/>
+<rect x="24" y="121" width="144.35" height="19" rx="3" fill="#226a4b"/>
+</svg><figcaption>Current metadata snapshot at unequal repository ages. Historical star counts were not collected, so stars are not used to normalise the age-aligned reports. <a href="https://www.star-history.com/?repos=earendil-works%2Fpi%2Copenclaw%2Fopenclaw&amp;type=date&amp;legend=top-left" target="_blank" rel="noreferrer">Compare star growth on Star History ↗</a>. That live, third-party chart uses calendar dates, not aligned project ages, and is not part of this fixed snapshot.</figcaption></figure></div>
+<h2>The same first 285 days</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Equal-age totals"><table><caption>Counts available at capture, grouped by creation or publication date. Links reproduce the issue queries; release links show the upstream release lists.</caption><thead><tr><th scope="col">Measure</th><th scope="col">OpenClaw</th><th scope="col">Pi</th></tr></thead><tbody><tr><th scope="row">Non-prerelease releases</th><td><a href="https://github.com/openclaw/openclaw/releases">113</a></td><td><a href="https://github.com/earendil-works/pi/releases">220</a></td></tr><tr><th scope="row">All issue reports opened</th><td><a href="https://github.com/search?q=repo%3Aopenclaw%2Fopenclaw+is%3Aissue+created%3A2025-11-24..2026-09-04&amp;type=issues">51,140</a></td><td><a href="https://github.com/search?q=repo%3Aearendil-works%2Fpi+is%3Aissue+created%3A2025-08-09..2026-05-20&amp;type=issues">2,825</a></td></tr><tr><th scope="row">Reports currently labelled bug</th><td><a href="https://github.com/search?q=repo%3Aopenclaw%2Fopenclaw+is%3Aissue+label%3Abug+created%3A2025-11-24..2026-09-04&amp;type=issues">14,315</a></td><td><a href="https://github.com/search?q=repo%3Aearendil-works%2Fpi+is%3Aissue+label%3Abug+created%3A2025-08-09..2026-05-20&amp;type=issues">864</a></td></tr><tr><th scope="row">Update / upgrade bug reports</th><td><a href="https://github.com/search?q=repo%3Aopenclaw%2Fopenclaw+is%3Aissue+label%3Abug+%28update+OR+upgrade%29+in%3Atitle+created%3A2025-11-24..2026-09-04&amp;type=issues">641</a></td><td><a href="https://github.com/search?q=repo%3Aearendil-works%2Fpi+is%3Aissue+label%3Abug+%28update+OR+upgrade%29+in%3Atitle+created%3A2025-08-09..2026-05-20&amp;type=issues">34</a></td></tr></tbody></table></div>
+<h2>Check the choice of starting point</h2><p>Counting from each repository’s <strong>earliest retained non-prerelease GitHub release</strong> instead gives a shared 277-day window. This excludes history before each first retained release, but still does not establish a public launch date. Earliest retained tags in this snapshot: OpenClaw: <code>v0.1.1</code>, Pi: <code>v0.12.0</code>. Neither starting point controls for audience or scope.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Alternative starting point"><table><caption>Starting-point sensitivity check, not the series plotted above. Source queries are included in the JSON snapshot.</caption><thead><tr><th scope="col">Measure</th><th scope="col">OpenClaw</th><th scope="col">Pi</th></tr></thead><tbody><tr><th scope="row">Starting date</th><td>2025-11-25</td><td>2025-12-02</td></tr><tr><th scope="row">End date (exclusive)</th><td>2026-08-29</td><td>2026-09-05</td></tr><tr><th scope="row">Non-prerelease releases</th><td>110</td><td>258</td></tr><tr><th scope="row">All issue reports opened</th><td>49,361</td><td>5,716</td></tr><tr><th scope="row">Reports currently labelled bug</th><td>13,832</td><td>1,654</td></tr><tr><th scope="row">Update / upgrade bug reports</th><td>619</td><td>68</td></tr><tr><th scope="row">Update / upgrade share of bug reports</th><td>4.48%</td><td>4.11%</td></tr></tbody></table></div>
+<h2>What changed in the surrounding ecosystem?</h2>
+<p>The components matter as well as the core. These dates help locate the emerging alternatives, but repository creation is not proof that a particular feature was usable then.</p><ul><li><a href="https://github.com/benedict2310/TelePi">TelePi</a>: repository created 2026-03-19.</li><li><a href="https://github.com/sebastienservouze/pi-livecraft">Pi Livecraft</a>: repository created 2026-07-19.</li></ul>
+<p>Pi Livecraft and TelePi have their own issues, dependencies and maintenance work. They are <strong>not included</strong> in Pi’s core-repository counts. A fair comparison of complete setups must also measure those components and the work of assembling them.</p>
+<h2>How to read this fairly</h2>
+<ul>
+<li><strong>“Inception” is an explicit proxy.</strong> Day zero is the UTC calendar date from GitHub’s <code>created_at</code>, not a verified first public launch or the coding agent’s birth. Pi’s repository covers a broader toolkit; repository creation and a tool’s public availability can differ. Renames, imported history and deleted records can affect both histories.</li>
+<li><strong>Windows are half-open.</strong> A point at day 30 includes the creation date through day 29. Activity on or after <code>2026-09-05</code> UTC is excluded. Samples are every 30 days plus the shared and latest endpoints; lines only connect those samples.</li>
+<li><strong>This is a retrospective count, not archived monthly snapshots.</strong> Open and closed issues are counted by creation date using labels and titles at capture. Releases are the retained, non-draft, non-prerelease GitHub records, dated by publication. Missing or deleted history is not reconstructed.</li>
+<li><strong>Age alignment trades away calendar alignment.</strong> Each first 285-day period took place in different months, with different models, audiences and ecosystem maturity. The guide’s same-calendar comparison answers a different, complementary question.</li>
+<li><strong>Reporting policies and scope differ.</strong> Pi documents auto-closing issues and PRs from new contributors by default; OpenClaw has a broader integrated surface. Labels, triage and user reporting habits can move these counts independently of reliability.</li>
+<li><strong>Stars are not exposure.</strong> Only current star counts were collected. They neither reconstruct historical popularity nor measure active users, so no reports-per-star reliability claim is made.</li>
+<li><strong>Do not substitute this for an operational benchmark.</strong> To test the personal experience, compare matched tasks, upgrade success, repair time, repair tokens, unwanted calls, permission scope and recovery across the whole installed stack.</li>
+</ul>
+<details><summary>All plotted counts and dates</summary><div class="table-scroll" tabindex="0" role="region" aria-label="All chart observations"><table><caption>Cumulative counts; end dates are exclusive. Day zero denotes an empty interval.</caption><thead><tr><th scope="col">Project</th><th scope="col">Age (days)</th><th scope="col">End exclusive</th><th scope="col">Releases</th><th scope="col">Issues</th><th scope="col">Bug-labelled</th><th scope="col">Update/upgrade bugs</th></tr></thead><tbody><tr><td>OpenClaw</td><td>0</td><td>2025-11-24</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>OpenClaw</td><td>30</td><td>2025-12-24</td><td>9</td><td>28</td><td>3</td><td>0</td></tr><tr><td>OpenClaw</td><td>60</td><td>2026-01-23</td><td>29</td><td>496</td><td>269</td><td>5</td></tr><tr><td>OpenClaw</td><td>90</td><td>2026-02-22</td><td>46</td><td>10628</td><td>4784</td><td>141</td></tr><tr><td>OpenClaw</td><td>120</td><td>2026-03-24</td><td>60</td><td>22012</td><td>7646</td><td>272</td></tr><tr><td>OpenClaw</td><td>150</td><td>2026-04-23</td><td>76</td><td>30559</td><td>9644</td><td>397</td></tr><tr><td>OpenClaw</td><td>180</td><td>2026-05-23</td><td>94</td><td>37212</td><td>11039</td><td>505</td></tr><tr><td>OpenClaw</td><td>210</td><td>2026-06-22</td><td>103</td><td>40304</td><td>11594</td><td>537</td></tr><tr><td>OpenClaw</td><td>240</td><td>2026-07-22</td><td>106</td><td>44462</td><td>12350</td><td>564</td></tr><tr><td>OpenClaw</td><td>270</td><td>2026-08-21</td><td>110</td><td>47745</td><td>13159</td><td>595</td></tr><tr><td>OpenClaw</td><td>285</td><td>2026-09-05</td><td>113</td><td>51140</td><td>14315</td><td>641</td></tr><tr><td>Pi</td><td>0</td><td>2025-08-09</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Pi</td><td>30</td><td>2025-09-08</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Pi</td><td>60</td><td>2025-10-08</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Pi</td><td>90</td><td>2025-11-07</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>Pi</td><td>120</td><td>2025-12-07</td><td>17</td><td>85</td><td>1</td><td>0</td></tr><tr><td>Pi</td><td>150</td><td>2026-01-06</td><td>91</td><td>225</td><td>16</td><td>0</td></tr><tr><td>Pi</td><td>180</td><td>2026-02-05</td><td>141</td><td>566</td><td>81</td><td>2</td></tr><tr><td>Pi</td><td>210</td><td>2026-03-07</td><td>167</td><td>785</td><td>142</td><td>3</td></tr><tr><td>Pi</td><td>240</td><td>2026-04-06</td><td>185</td><td>1407</td><td>328</td><td>6</td></tr><tr><td>Pi</td><td>270</td><td>2026-05-06</td><td>212</td><td>2383</td><td>693</td><td>18</td></tr><tr><td>Pi</td><td>285</td><td>2026-05-21</td><td>220</td><td>2825</td><td>864</td><td>34</td></tr><tr><td>Pi</td><td>300</td><td>2026-06-05</td><td>226</td><td>3217</td><td>1004</td><td>43</td></tr><tr><td>Pi</td><td>330</td><td>2026-07-05</td><td>241</td><td>3855</td><td>1203</td><td>51</td></tr><tr><td>Pi</td><td>360</td><td>2026-08-04</td><td>252</td><td>4684</td><td>1415</td><td>60</td></tr><tr><td>Pi</td><td>390</td><td>2026-09-03</td><td>257</td><td>5688</td><td>1636</td><td>68</td></tr><tr><td>Pi</td><td>392</td><td>2026-09-05</td><td>258</td><td>5777</td><td>1655</td><td>68</td></tr></tbody></table></div></details>
+<div class="links"><a href="evidence-data.json" download>Download source snapshot (JSON)</a><a href="evidence.csv" download>Download plotted counts (CSV)</a><a href="https://api.github.com/repos/openclaw/openclaw">OpenClaw metadata</a><a href="https://api.github.com/repos/earendil-works/pi">Pi metadata</a><a href="https://github.com/earendil-works/pi#readme">Pi reporting policy</a></div>
+<footer>Collection run: 2026-09-05T17:17:33+00:00 to 2026-09-05T17:17:45+00:00. Each API observation has its own timestamp in the source snapshot; cached observations may predate the run. Search results marked incomplete are rejected. Supplementary activity preview; not a reliability ranking.</footer>
+</main></body></html>
