@@ -36,6 +36,8 @@
         <span>small agent stack</span>
       </a>
       <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#evidence">Evidence</a>
         <a href="#stack">The stack</a>
         <a href="#start">Set up</a>
         <a href="#migrate">Migrate</a>
@@ -47,6 +49,8 @@
         <span></span><span></span>
       </button>
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#evidence">Evidence</a>
         <a href="#stack">The stack</a>
         <a href="#start">Set up</a>
         <a href="#migrate">Migrate</a>
@@ -120,10 +124,248 @@
         </div>
       </section>
 
+      <section class="philosophy section-pad" id="philosophy">
+        <div class="section-heading philosophy-heading">
+          <div>
+            <div class="section-index">01 / Philosophy</div>
+            <p class="eyebrow">The design argument</p>
+            <h2>The agent should fit <em>your</em> life.</h2>
+          </div>
+          <p class="section-summary">
+            People liked the idea of agents because they could describe an outcome instead of learning
+            another interface. The promise was not one bloated middleware layer controlling the workflow.
+          </p>
+        </div>
+
+        <div class="philosophy-body">
+          <div class="philosophy-copy">
+            <p>
+              A large agent platform can invert that promise. Work must live where the platform expects,
+              run through its orchestration, and accommodate machinery the user did not choose. Instead of
+              the agent adapting to the user’s tools and routines, the user begins working around the agent.
+            </p>
+            <p>
+              The Unix instinct offers a useful alternative: give small pieces clear responsibilities,
+              connect them through understandable interfaces, and make each piece replaceable. Pi can do
+              the thinking; the operating system can keep time; a browser or messenger can remain optional.
+              Simplicity is the ultimate sophistication when it makes the system easier to inspect, change,
+              and trust—not when it merely hides complexity.
+            </p>
+            <p>
+              Better still, an agent can help people discover their own workflow: notice repeated work,
+              name the pattern, propose a small automation, and revise it as their needs become clearer.
+              The workflow belongs to the user. The agent helps reveal it.
+            </p>
+          </div>
+
+          <div class="principle-list">
+            <article class="principle">
+              <span>01</span>
+              <div>
+                <h3>Keep the seams visible</h3>
+                <p>
+                  When an invisible heartbeat consumes tokens, the abstraction has leaked. The user now
+                  has to understand hidden orchestration simply to control cost.
+                </p>
+              </div>
+            </article>
+            <article class="principle">
+              <span>02</span>
+              <div>
+                <h3>Limit the upgrade blast radius</h3>
+                <p>
+                  Bundling more responsibilities means one upgrade can disturb more of the workflow.
+                  Independent pieces can change without forcing every other piece to change with them.
+                </p>
+              </div>
+            </article>
+            <article class="principle">
+              <span>03</span>
+              <div>
+                <h3>Let the user compose</h3>
+                <p>
+                  Add scheduling, a browser, or messaging because it serves a real routine—not because the
+                  platform assumes every user needs the same control plane.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <aside class="experience-note">
+          <span>One user’s evidence</span>
+          <p>
+            In my own setup, OpenClaw upgrades repeatedly broke parts of the workflow, while Pi agent
+            updates have been remarkably reliable. That is experience, not a universal benchmark—but it
+            is exactly what a smaller upgrade surface should make more likely.
+          </p>
+        </aside>
+
+        <div class="prompt-card philosophy-prompt">
+          <div class="prompt-toolbar">
+            <div>
+              <span class="prompt-light"></span>
+              <span class="prompt-label">CHALLENGE THIS THESIS</span>
+            </div>
+            <button class="copy-button prompt-copy" type="button" data-copy-target="philosophy-prompt">Copy prompt</button>
+          </div>
+          <pre id="philosophy-prompt"><code>Evaluate this thesis: personal AI agents should adapt to a user’s existing tools and evolving workflow through small, composable components, rather than requiring the user to work inside one integrated middleware platform.
+
+Steelman both sides. First, make the strongest case for an integrated agent platform, including onboarding, shared state, security, coordination, and convenience. Then make the strongest case for a Unix-style modular stack, including inspectability, replaceability, failure isolation, user control, and agents helping users discover their own workflows.
+
+Examine where each approach leaks abstraction—for example, when users must understand heartbeats or background activity to control token costs—and compare their upgrade blast radius. Separate evidence from preference, name the failure modes of both approaches, and conclude with the conditions under which each design wins. Include the strongest hybrid design you can propose.</code></pre>
+          <div class="prompt-footer">
+            <span>Paste this into your favourite AI. Ask it to disagree before you decide.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="evidence section-pad" id="evidence">
+        <div class="section-heading evidence-heading">
+          <div>
+            <div class="section-index">02 / Evidence</div>
+            <p class="eyebrow">What the public record shows</p>
+            <h2>Upkeep became part of the job.</h2>
+          </div>
+          <p class="section-summary">
+            The complaints are not only “it broke.” Users describe learning to stage releases, pin
+            versions, snapshot state, run repair commands, and keep rollback paths ready—the habits of a
+            service operator, not merely the owner of a personal assistant.
+          </p>
+        </div>
+
+        <div class="evidence-table" role="table" aria-label="Public GitHub activity for OpenClaw and Pi over 90 days">
+          <div class="evidence-row evidence-header" role="row">
+            <span role="columnheader">GitHub · 7 Jun–4 Sep 2026</span>
+            <span role="columnheader">OpenClaw</span>
+            <span role="columnheader">Pi</span>
+          </div>
+          <div class="evidence-row" role="row">
+            <strong role="rowheader">Repository audience at capture</strong>
+            <span class="evidence-value" role="cell"><b>388,931</b> stars</span>
+            <span class="evidence-value" role="cell"><b>102,007</b> stars</span>
+          </div>
+          <div class="evidence-row" role="row">
+            <strong role="rowheader">Non-prerelease releases published</strong>
+            <span class="evidence-value" role="cell"><b>14</b> releases</span>
+            <span class="evidence-value" role="cell"><b>32</b> releases</span>
+          </div>
+          <div class="evidence-row" role="row">
+            <strong role="rowheader">All issue reports opened</strong>
+            <span class="evidence-value" role="cell"><b>12,026</b> reports</span>
+            <span class="evidence-value" role="cell"><b>2,528</b> reports</span>
+          </div>
+          <div class="evidence-row" role="row">
+            <strong role="rowheader">Reports labelled as bugs</strong>
+            <span class="evidence-value" role="cell"><b>2,942</b> reports</span>
+            <span class="evidence-value" role="cell"><b>641</b> reports</span>
+          </div>
+          <div class="evidence-row evidence-focus-row" role="row">
+            <strong role="rowheader">Bugs with “update” or “upgrade” in the title</strong>
+            <span class="evidence-value" role="cell">
+              <a href="https://github.com/openclaw/openclaw/issues?q=is%3Aissue%20label%3Abug%20%28update%20OR%20upgrade%29%20in%3Atitle%20created%3A2026-06-07..2026-09-04" target="_blank" rel="noreferrer"><b>122</b> reports ↗</a>
+            </span>
+            <span class="evidence-value" role="cell">
+              <a href="https://github.com/earendil-works/pi/issues?q=is%3Aissue%20label%3Abug%20%28update%20OR%20upgrade%29%20in%3Atitle%20created%3A2026-06-07..2026-09-04" target="_blank" rel="noreferrer"><b>25</b> reports ↗</a>
+            </span>
+          </div>
+        </div>
+        <p class="evidence-caption">
+          Snapshot captured 5 September 2026 using GitHub’s Search and Releases APIs. Release counts
+          exclude drafts and prereleases. Issue counts depend on each project’s labels and reporting
+          habits; titles miss failures described only in the body. OpenClaw also has roughly 3.8× Pi’s
+          GitHub stars. Normalised by stars, the highlighted figures are about 0.31 versus 0.25 reports per
+          thousand stars; as a share of bug-labelled reports, they are 4.1% versus 3.9%. Stars are not
+          active users, so these are directional maintenance signals—not measured failure rates.
+          <a href="https://github.com/openclaw/openclaw/releases" target="_blank" rel="noreferrer">OpenClaw releases ↗</a>
+          <a href="https://github.com/earendil-works/pi/releases" target="_blank" rel="noreferrer">Pi releases ↗</a>
+        </p>
+
+        <div class="signal-grid">
+          <article class="signal-card">
+            <span class="signal-source">Reddit · recurring pattern</span>
+            <h3>An update needed an operations plan.</h3>
+            <p>
+              Users report broken gateways, cron jobs, credentials, channels, and config after upgrades.
+              The practical advice is revealing: wait, inspect GitHub, test separately, pin dependencies,
+              snapshot the state directory, and know how to roll back.
+            </p>
+            <div class="signal-links">
+              <a href="https://www.reddit.com/r/openclaw/comments/1te4rzr/has_any_openclaw_upgrade_ever_not_broken_something/" target="_blank" rel="noreferrer">Upgrade discussion ↗</a>
+              <a href="https://www.reddit.com/r/openclaw/comments/1uwdr2z/in_yet_another_surprise_202671_broke_my_install/" target="_blank" rel="noreferrer">7.1 reports ↗</a>
+            </div>
+          </article>
+
+          <article class="signal-card">
+            <span class="signal-source">X + official docs · failure at the seams</span>
+            <h3>The control plane multiplies boundaries.</h3>
+            <p>
+              A late-April incident joined slow gateways, plugin-repair loops, and broken chat channels in
+              one release cycle. Current OpenClaw documentation now treats backup, health checks, Doctor,
+              restart, and two-layer rollback as part of safe updating.
+            </p>
+            <div class="signal-links">
+              <a href="https://x.com/i/trending/2051108934908522734?lang=en" target="_blank" rel="noreferrer">X incident summary ↗</a>
+              <a href="https://openclaw.ai/blog/openclaw-rough-week" target="_blank" rel="noreferrer">Maintainer account ↗</a>
+              <a href="https://github.com/openclaw/openclaw/blob/main/docs/install/updating.md" target="_blank" rel="noreferrer">Official update guide ↗</a>
+            </div>
+          </article>
+
+          <article class="signal-card">
+            <span class="signal-source">Pi · counter-check</span>
+            <h3>Smaller is not the same as flawless.</h3>
+            <p>
+              Pi has shipped update regressions too, including extension crashes and package-update bugs.
+              Yet a detailed Reddit critique still described the core as stable while naming TUI, parsing,
+              and provider-reliability problems. The claim is narrower: fewer built-in responsibilities
+              leave fewer coupled systems to preserve in each update.
+            </p>
+            <div class="signal-links">
+              <a href="https://www.reddit.com/r/PiCodingAgent/comments/1usdpqw/my_problems_with_pi/" target="_blank" rel="noreferrer">Critical Pi review ↗</a>
+              <a href="https://github.com/earendil-works/pi/issues/4908" target="_blank" rel="noreferrer">Pi regression example ↗</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="parallel-panel">
+          <div class="parallel-intro">
+            <p class="eyebrow">This trade-off is not new</p>
+            <h3>Other systems learned to separate velocity from stability.</h3>
+          </div>
+          <div class="parallel-list">
+            <div>
+              <span><a href="https://openclaw.ai/blog/extended-stable-releases-and-maturity-scorecards" target="_blank" rel="noreferrer">Rolling release → LTS ↗</a></span>
+              <p>Fast channels maximise learning. Stable channels protect routines. Mixing those promises makes every update a wager.</p>
+            </div>
+            <div>
+              <span>Control plane → failure domain</span>
+              <p>Central coordination is convenient, but gateway, plugins, state, channels, and schedules can fail together at their seams.</p>
+            </div>
+            <div>
+              <span>Unix tools → composition</span>
+              <p>Independent parts shift some assembly to the user, but timing, chat, UI, and agent updates no longer share one blast radius.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="evidence-conclusion">
+          <p>
+            <strong>The fair conclusion:</strong> OpenClaw’s integration is the feature. It gets many hard
+            things working behind one Gateway, and recent users also report improved stability. That power
+            creates more compatibility edges and asks more operational effort when they move.
+          </p>
+          <p>
+            Pi’s public record does not prove perfect reliability. It does support a simpler proposition:
+            a minimal harness can release quickly while leaving cron, messaging, browsers, and their state
+            outside its upgrade path. <a href="https://pi.dev/" target="_blank" rel="noreferrer">That is also Pi’s stated design philosophy ↗</a>
+          </p>
+        </div>
+      </section>
+
       <section class="stack section-pad" id="stack">
         <div class="section-heading">
           <div>
-            <div class="section-index">01 / The stack</div>
+            <div class="section-index">03 / The stack</div>
             <p class="eyebrow">Small pieces, clear jobs</p>
             <h2>Four tools.<br /><em>No mystery layer.</em></h2>
           </div>
@@ -232,7 +474,7 @@
       <section class="setup section-pad" id="start">
         <div class="section-heading setup-heading">
           <div>
-            <div class="section-index">02 / Set up</div>
+            <div class="section-index">04 / Set up</div>
             <p class="eyebrow">A calm first ten minutes</p>
             <h2>Begin with one piece.</h2>
           </div>
@@ -318,7 +560,7 @@
       <section class="optional section-pad">
         <div class="section-heading compact-heading">
           <div>
-            <div class="section-index">03 / Add what you need</div>
+            <div class="section-index">05 / Add what you need</div>
             <h2>The optional layers.</h2>
           </div>
           <p class="section-summary">Get comfortable with Pi first. Then add one interface at a time.</p>
@@ -545,7 +787,7 @@ Never enumerate, read, or modify any note other than the two exact names above. 
       <section class="migration section-pad" id="migrate">
         <div class="migration-intro">
           <div>
-            <div class="section-index light-index">04 / Migrate</div>
+            <div class="section-index light-index">06 / Migrate</div>
             <p class="eyebrow">Already using OpenClaw?</p>
             <h2>Let Pi do the careful<br /><em>sorting for you.</em></h2>
           </div>
@@ -643,7 +885,7 @@ Safety rules:
       <section class="comparison section-pad">
         <div class="section-heading compact-heading">
           <div>
-            <div class="section-index">05 / What changes</div>
+            <div class="section-index">07 / What changes</div>
             <h2>A different mental model.</h2>
           </div>
           <p class="section-summary">This setup trades an integrated control plane for parts you can see and replace.</p>
@@ -675,7 +917,7 @@ Safety rules:
 
       <section class="faq section-pad" id="questions">
         <div class="faq-title">
-          <div class="section-index">06 / Questions</div>
+          <div class="section-index">08 / Questions</div>
           <p class="eyebrow">Plain answers</p>
           <h2>Before you switch.</h2>
         </div>
@@ -734,6 +976,7 @@ Safety rules:
         <div><strong>The Small Agent Stack</strong><small>A field guide, not a product.</small></div>
       </div>
       <div class="footer-links">
+        <a href="https://github.com/EMRahman/SmallAgentStack" target="_blank" rel="noreferrer">Edit this guide on GitHub ↗</a>
         <a href="https://pi.dev/docs/latest" target="_blank" rel="noreferrer">Pi docs ↗</a>
         <a href="https://github.com/sebastienservouze/pi-livecraft" target="_blank" rel="noreferrer">Livecraft ↗</a>
         <a href="https://github.com/benedict2310/TelePi" target="_blank" rel="noreferrer">TelePi ↗</a>
