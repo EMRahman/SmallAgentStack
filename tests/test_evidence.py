@@ -1,6 +1,7 @@
+import html
 import importlib.util
 import json
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 import tempfile
 import unittest
@@ -60,6 +61,34 @@ class EvidenceTests(unittest.TestCase):
         self.assertEqual(len(lines[1].attrib["points"].split()), 3)
         self.assertIn("stroke-dasharray", lines[1].attrib)
         self.assertIsNotNone(chart.find("desc"))
+
+    def test_retained_release_tags_are_snapshot_derived_and_escaped(self):
+        snapshot = Path(__file__).resolve().parents[1] / "drafts" / "evidence-data.json"
+        data = json.loads(snapshot.read_text())
+        pi = next(p for p in data["projects"] if p["repository"] == "earendil-works/pi")
+        releases = pi["releases"]
+        first = releases[0]
+        earlier_date = date.fromisoformat(first["published_at"][:10]) - timedelta(days=1)
+        variants = (
+            ("earlier release added", [dict(first, tag_name="v0.11.0", published_at=f"{earlier_date}T00:00:00Z"), *releases]),
+            ("first release removed", releases[1:]),
+            ("tag needs escaping", [dict(first, tag_name='v<preview>&"test"'), *releases[1:]]),
+        )
+        with tempfile.TemporaryDirectory() as temp:
+            modified = Path(temp) / "snapshot.json"
+            target = Path(temp) / "evidence.html"
+            for label, updated_releases in variants:
+                with self.subTest(change=label):
+                    pi["releases"] = updated_releases
+                    modified.write_text(json.dumps(data))
+                    evidence.render(modified, target)
+                    methodology = target.read_text().split(
+                        "<h2>Check the choice of starting point</h2>", 1,
+                    )[1].split("</p>", 1)[0]
+                    for project in data["projects"]:
+                        expected = f'{html.escape(project["name"])}: <code>{html.escape(project["releases"][0]["tag_name"])}</code>'
+                        self.assertIn(expected, methodology)
+                    self.assertNotIn("first retained release is already v0.12.0", methodology)
 
     def test_snapshot_and_render_when_available(self):
         snapshot = Path(__file__).resolve().parents[1] / "drafts" / "evidence-data.json"

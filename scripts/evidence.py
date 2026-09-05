@@ -288,7 +288,11 @@ def render(snapshot, output):
             check_rows.append(f'<tr><th scope="row">{label}</th>{cells}</tr>')
         share_cells = ''.join(f'<td>{bug_share(p):.2f}%</td>' if bug_share(p) is not None else '<td>Not available</td>' for p in check["projects"])
         check_rows.append(f'<tr><th scope="row">Update / upgrade share of bug reports</th>{share_cells}</tr>')
-        release_check_html = f'<h2>Check the choice of starting point</h2><p>Counting from each repository’s <strong>earliest retained non-prerelease GitHub release</strong> instead gives a shared {check["common_age_days"]}-day window. This removes the early quiet repository period, but is still not a verified launch date: Pi’s first retained release is already v0.12.0. Neither starting point controls for audience or scope.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Alternative starting point"><table><caption>Starting-point sensitivity check, not the series plotted above. Source queries are included in the JSON snapshot.</caption><thead><tr><th scope="col">Measure</th><th scope="col">OpenClaw</th><th scope="col">Pi</th></tr></thead><tbody>{"".join(check_rows)}</tbody></table></div>'
+        earliest_tags = ", ".join(
+            f'{html.escape(p["name"])}: <code>{html.escape(p["releases"][0]["tag_name"])}</code>'
+            for p in data["projects"] if p["releases"]
+        )
+        release_check_html = f'<h2>Check the choice of starting point</h2><p>Counting from each repository’s <strong>earliest retained non-prerelease GitHub release</strong> instead gives a shared {check["common_age_days"]}-day window. This excludes history before each first retained release, but still does not establish a public launch date. Earliest retained tags in this snapshot: {earliest_tags}. Neither starting point controls for audience or scope.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Alternative starting point"><table><caption>Starting-point sensitivity check, not the series plotted above. Source queries are included in the JSON snapshot.</caption><thead><tr><th scope="col">Measure</th><th scope="col">OpenClaw</th><th scope="col">Pi</th></tr></thead><tbody>{"".join(check_rows)}</tbody></table></div>'
     ecosystem = []
     for item in data["ecosystem"]:
         meta = item["payload"]
@@ -336,7 +340,7 @@ footer { margin-top:40px; padding-top:20px; border-top:1px solid #b7bdb4; color:
 <p>Pi Livecraft and TelePi have their own issues, dependencies and maintenance work. They are <strong>not included</strong> in Pi’s core-repository counts. A fair comparison of complete setups must also measure those components and the work of assembling them.</p>
 <h2>How to read this fairly</h2>
 <ul>
-<li><strong>“Inception” is an explicit proxy.</strong> Day zero is the UTC calendar date from GitHub’s <code>created_at</code>, not a verified first public launch or the coding agent’s birth. Pi’s repository covers a broader toolkit; its early months precede the first retained GitHub release. Renames, imported history and deleted records can affect both histories.</li>
+<li><strong>“Inception” is an explicit proxy.</strong> Day zero is the UTC calendar date from GitHub’s <code>created_at</code>, not a verified first public launch or the coding agent’s birth. Pi’s repository covers a broader toolkit; repository creation and a tool’s public availability can differ. Renames, imported history and deleted records can affect both histories.</li>
 <li><strong>Windows are half-open.</strong> A point at day 30 includes the creation date through day 29. Activity on or after <code>{data['cutoff_exclusive']}</code> UTC is excluded. Samples are every 30 days plus the shared and latest endpoints; lines only connect those samples.</li>
 <li><strong>This is a retrospective count, not archived monthly snapshots.</strong> Open and closed issues are counted by creation date using labels and titles at capture. Releases are the retained, non-draft, non-prerelease GitHub records, dated by publication. Missing or deleted history is not reconstructed.</li>
 <li><strong>Age alignment trades away calendar alignment.</strong> Each first {common}-day period took place in different months, with different models, audiences and ecosystem maturity. The guide’s same-calendar comparison answers a different, complementary question.</li>
