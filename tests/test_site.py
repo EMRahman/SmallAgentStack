@@ -71,7 +71,7 @@ class Page(HTMLParser):
 
 class SiteTests(unittest.TestCase):
     def test_ids_references_and_local_links(self):
-        for relative in ("index.html", "drafts/evidence.html"):
+        for relative in ("index.html", "evidence/evidence.html"):
             path = ROOT / relative
             page = Page(path.read_text())
             with self.subTest(page=relative):
@@ -95,7 +95,7 @@ class SiteTests(unittest.TestCase):
         self.assertIn("steelman-heading", page.references)
 
     def test_star_history_is_a_calendar_date_reference_not_an_embed(self):
-        for relative in ("index.html", "drafts/evidence.html"):
+        for relative in ("index.html", "evidence/evidence.html"):
             page = Page((ROOT / relative).read_text())
             matches = [a for a in page.links if urlsplit(a.get("href", "")).netloc == "www.star-history.com"]
             self.assertEqual(len(matches), 1)

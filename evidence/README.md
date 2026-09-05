@@ -19,7 +19,7 @@ For historical audience growth, the preview links to the [Pi / OpenClaw comparis
 From the repository root, render the existing snapshot without network access:
 
 ```sh
-python3 scripts/evidence.py render drafts/evidence-data.json --output drafts/evidence.html
+python3 scripts/evidence.py render evidence/evidence-data.json --output evidence/evidence.html
 python3 -B -m unittest discover -s tests -v
 ```
 
@@ -28,7 +28,7 @@ To collect a new public snapshot, authenticate GitHub CLI yourself, then use a *
 ```sh
 python3 scripts/evidence.py collect \
   --cutoff YYYY-MM-DD \
-  --output drafts/evidence-data.json \
+  --output evidence/evidence-data.json \
   --cache /tmp/smallagentstack-evidence-NEW-CAPTURE
 ```
 

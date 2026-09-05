@@ -63,7 +63,7 @@ class EvidenceTests(unittest.TestCase):
         self.assertIsNotNone(chart.find("desc"))
 
     def test_retained_release_tags_are_snapshot_derived_and_escaped(self):
-        snapshot = Path(__file__).resolve().parents[1] / "drafts" / "evidence-data.json"
+        snapshot = Path(__file__).resolve().parents[1] / "evidence" / "evidence-data.json"
         data = json.loads(snapshot.read_text())
         pi = next(p for p in data["projects"] if p["repository"] == "earendil-works/pi")
         releases = pi["releases"]
@@ -91,7 +91,7 @@ class EvidenceTests(unittest.TestCase):
                     self.assertNotIn("first retained release is already v0.12.0", methodology)
 
     def test_snapshot_and_render_when_available(self):
-        snapshot = Path(__file__).resolve().parents[1] / "drafts" / "evidence-data.json"
+        snapshot = Path(__file__).resolve().parents[1] / "evidence" / "evidence-data.json"
         if not snapshot.exists():
             self.skipTest("Public snapshot has not finished collecting")
         data = json.loads(snapshot.read_text())

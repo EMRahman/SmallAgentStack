@@ -23,7 +23,7 @@ Visit the published site: [SmallAgentStack](https://emrahman.github.io/SmallAgen
 - `index.html` — page content and accessible structure
 - `styles.css` — responsive visual system
 - `script.js` — mobile navigation, copy buttons, prompt expansion, and subtle reveal animation
-- `drafts/evidence.html` — supplementary age-aligned chart preview; see `drafts/README.md` for sources and reproduction
+- `evidence/evidence.html` — supplementary age-aligned chart preview; see `evidence/README.md` for sources and reproduction
 - `scripts/evidence.py` — standard-library chart generator and read-only GitHub collector
 - `tests/` — data-methodology and page-structure tests
 
