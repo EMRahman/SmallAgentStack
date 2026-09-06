@@ -114,6 +114,10 @@ button { font: inherit; }
   overflow: hidden;
 }
 
+@media (min-width: 981px) {
+  .hero { overflow: visible; }
+}
+
 .hero-copy,
 .section-heading > *,
 .migration-intro > *,
@@ -207,7 +211,7 @@ h1 em { color: var(--orange); }
 .satellite small { color: var(--muted); font-size: 9px; margin-top: 3px; }
 .satellite-web { top: 84px; left: 47%; transform: rotate(2deg); }
 .satellite-cron { right: 2px; top: 46%; transform: rotate(-2deg); }
-.satellite-chat { bottom: 82px; left: 45%; transform: rotate(1deg); }
+.satellite-chat { bottom: 108px; left: 45%; transform: rotate(1deg); }
 .satellite-sessions { left: 0; top: 42%; transform: rotate(-2deg); }
 .satellite-web .satellite-icon { background: var(--blue); color: var(--ink); }
 .satellite-cron .satellite-icon { background: var(--orange); }
@@ -230,8 +234,8 @@ h1 em { color: var(--orange); }
 .interaction strong { font-size: 10px; }
 .interaction-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--night); color: var(--paper); font-size: 12px; font-weight: 700; }
 .interaction-icon-calendar { background: var(--orange); font-family: var(--mono); font-size: 8px; }
-.interaction-notes { left: 50%; top: 86px; transform: translateX(-260px) rotate(-3deg); }
-.interaction-calendar { left: 50%; top: 84px; transform: translateX(124px) rotate(2deg); }
+.interaction-notes { right: -90px; top: 232px; transform: rotate(-3deg); }
+.interaction-calendar { left: -52px; bottom: 150px; transform: rotate(2deg); }
 .interaction-telegram { left: 50%; bottom: 72px; transform: translateX(121px) rotate(-2deg); }
 .interaction-telegram .interaction-icon { background: #2789c7; }
 
@@ -681,10 +685,10 @@ footer .brand-mark > span { background: var(--acid); }
   .orbit-inner { width: 245px; height: 245px; }
   .satellite-web { top: 66px; }
   .satellite-cron { right: -35px; }
-  .satellite-chat { bottom: 64px; }
+  .satellite-chat { bottom: 86px; }
   .satellite-sessions { left: -35px; }
-  .interaction-notes { top: 57px; transform: translateX(-230px) rotate(-3deg); }
-  .interaction-calendar { top: 55px; transform: translateX(87px) rotate(2deg); }
+  .interaction-notes { right: -70px; top: 184px; transform: rotate(-3deg); }
+  .interaction-calendar { left: -55px; bottom: 125px; transform: rotate(2deg); }
   .interaction-telegram { bottom: 48px; transform: translateX(92px) rotate(-2deg); }
   .label-one { top: -4px; }
   .label-two { left: -18px; bottom: -7px; }
