@@ -161,13 +161,14 @@ h1 em { color: var(--orange); }
 .hero-note { display: flex; align-items: center; gap: 9px; color: var(--muted); font-family: var(--mono); font-size: 11px; margin-top: 28px; }
 .hero-note span { width: 7px; height: 7px; border-radius: 50%; background: #55ae69; box-shadow: 0 0 0 4px rgba(85, 174, 105, .14); }
 
-.hero-visual { height: 570px; position: relative; }
+.hero-visual { height: 620px; position: relative; }
 .orbit { position: absolute; border: 1px solid rgba(23, 32, 31, .18); border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); }
-.orbit-outer { width: 490px; height: 490px; }
+.orbit-interactions { width: 560px; height: 560px; border-color: rgba(23, 32, 31, .28); }
+.orbit-outer { width: 420px; height: 420px; }
 .orbit-inner { width: 300px; height: 300px; border-style: dashed; animation: orbit-spin 28s linear infinite; }
 .orbit-outer::before, .orbit-outer::after { content: ""; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--ink); }
-.orbit-outer::before { top: 71px; left: 53px; }
-.orbit-outer::after { bottom: 45px; right: 81px; }
+.orbit-outer::before { top: 61px; left: 45px; }
+.orbit-outer::after { bottom: 38px; right: 69px; }
 @keyframes orbit-spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
 
 .core-node {
@@ -204,17 +205,39 @@ h1 em { color: var(--orange); }
 .satellite span:last-child { display: flex; flex-direction: column; line-height: 1.2; }
 .satellite strong { font-size: 12px; }
 .satellite small { color: var(--muted); font-size: 9px; margin-top: 3px; }
-.satellite-web { top: 20px; left: 47%; transform: rotate(2deg); }
-.satellite-cron { right: -7px; top: 46%; transform: rotate(-2deg); }
-.satellite-chat { bottom: 26px; left: 45%; transform: rotate(1deg); }
-.satellite-sessions { left: -9px; top: 42%; transform: rotate(-2deg); }
+.satellite-web { top: 84px; left: 47%; transform: rotate(2deg); }
+.satellite-cron { right: 2px; top: 46%; transform: rotate(-2deg); }
+.satellite-chat { bottom: 82px; left: 45%; transform: rotate(1deg); }
+.satellite-sessions { left: 0; top: 42%; transform: rotate(-2deg); }
 .satellite-web .satellite-icon { background: var(--blue); color: var(--ink); }
 .satellite-cron .satellite-icon { background: var(--orange); }
 .satellite-chat .satellite-icon { background: var(--acid); color: var(--ink); }
 
+.interaction {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 39px;
+  padding: 7px 11px 7px 8px;
+  background: var(--paper-soft);
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 4px 4px 0 rgba(23, 32, 31, .08);
+  white-space: nowrap;
+}
+.interaction strong { font-size: 10px; }
+.interaction-icon { width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; background: var(--night); color: var(--paper); font-size: 12px; font-weight: 700; }
+.interaction-icon-calendar { background: var(--orange); font-family: var(--mono); font-size: 8px; }
+.interaction-notes { left: 50%; top: 86px; transform: translateX(-260px) rotate(-3deg); }
+.interaction-calendar { left: 50%; top: 84px; transform: translateX(124px) rotate(2deg); }
+.interaction-telegram { left: 50%; bottom: 72px; transform: translateX(121px) rotate(-2deg); }
+.interaction-telegram .interaction-icon { background: #2789c7; }
+
 .visual-label { position: absolute; font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--muted); }
-.label-one { left: 27px; top: 102px; transform: rotate(-11deg); }
-.label-two { right: 12px; bottom: 93px; transform: rotate(-8deg); }
+.label-one { left: 50%; top: 14px; padding: 0 8px; background: var(--paper); transform: translateX(-50%) rotate(-3deg); white-space: nowrap; }
+.label-two { left: 27px; bottom: 18px; transform: rotate(-8deg); }
 
 .section-pad { padding: 110px var(--pad); }
 .story { background: var(--night); color: var(--paper); }
@@ -650,13 +673,21 @@ footer .brand-mark > span { background: var(--acid); }
   h2 { font-size: clamp(40px, 12vw, 58px); }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .button { width: 100%; }
-  .hero-visual { height: 450px; transform: scale(.78); transform-origin: center; margin: -10px auto -30px; }
+  .hero-visual { height: 520px; transform: scale(.78); transform-origin: center; margin: -10px auto -30px; }
   .js .hero-visual.reveal { transform: translateY(18px) scale(.78); }
   .js .hero-visual.reveal.in-view { transform: translateY(0) scale(.78); }
-  .orbit-outer { width: 400px; height: 400px; }
-  .orbit-inner { width: 255px; height: 255px; }
-  .satellite-cron { right: -18px; }
-  .satellite-sessions { left: -20px; }
+  .orbit-interactions { width: 500px; height: 500px; }
+  .orbit-outer { width: 370px; height: 370px; }
+  .orbit-inner { width: 245px; height: 245px; }
+  .satellite-web { top: 66px; }
+  .satellite-cron { right: -35px; }
+  .satellite-chat { bottom: 64px; }
+  .satellite-sessions { left: -35px; }
+  .interaction-notes { top: 57px; transform: translateX(-230px) rotate(-3deg); }
+  .interaction-calendar { top: 55px; transform: translateX(87px) rotate(2deg); }
+  .interaction-telegram { bottom: 48px; transform: translateX(92px) rotate(-2deg); }
+  .label-one { top: -4px; }
+  .label-two { left: -18px; bottom: -7px; }
   .visual-label { display: none; }
   .stack-grid { grid-template-columns: 1fr; }
   .stack-card { min-height: 560px; }
