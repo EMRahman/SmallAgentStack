@@ -731,6 +731,18 @@ footer .brand-mark > span { background: var(--acid); }
   .footer-links { flex-direction: column; gap: 12px; }
 }
 
+@media (max-width: 389px) {
+  .hero-visual { transform: scale(.7); margin: -31px auto -49px; }
+  .js .hero-visual.reveal { transform: translateY(18px) scale(.7); }
+  .js .hero-visual.reveal.in-view { transform: translateY(0) scale(.7); }
+}
+
+@media (max-width: 359px) {
+  .hero-visual { transform: scale(.62); margin: -52px auto -68px; }
+  .js .hero-visual.reveal { transform: translateY(18px) scale(.62); }
+  .js .hero-visual.reveal.in-view { transform: translateY(0) scale(.62); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
